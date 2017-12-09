@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>SBI Life</title>
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+      <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+      <link rel="stylesheet" href="./assets/css/glyphicon.css" type="text/css" />
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="./assets/css/app.css" type="text/css" />
+      <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body id="app-layout" class="  ">
+      <div  class="app-header  ng-scope" style="">
+         <header class="hide-print  ng-scope">
+            <div class=" clearfix margtop">
+               <h1 id="logo" class=" h1hei">
+                  <img ng-src="../img/logo/ddemo.accozen.com.png" src="../img/logo/ddemo.accozen.com.png">
+               </h1>
+            
+				<div class="head-right clearfix navbar-header">
+                  <div class="col-sm-12">
+                     <div class="row">
+                        <a href="javascript:void(0)" class="btn menu-toggle no-shadow navbar-btn toppadding" ng-click="expandHandler()">
+                        <img class="icon icons8-Outdent out ng-hide" ng-show="!appConfig.navMenuExpand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAApElEQVQ4T62T3Q2DMBCD7Q06Ahu0I7BJGaGdpB2BUcImdBIjo1C1EhEH5F7ykPMX30+ICkFJNwCvE6wnT4i/0joQSRcA14CjD8lRUuPzN989aQB0AUgimSQlAD3JftHsLidD7MTQGXQIQrKVZMAMOlSOIXYgyY7aOk4CDf1LWe1Jns49ABuK08l74tXfirG4J1vKyP3uxq5Bl1/8jrxYyHlUcTIBYixZiY5vdLgAAAAASUVORK5CYII=" width="17" height="17" style="">
+                        <img class="icon icons8-Indent in" ng-show="appConfig.navMenuExpand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAArElEQVQ4T62T0Q3CMAxEnzdgBDaAEdgERiiTwAgdgQ1aNmCEMskhoxQVkaoOjaV85fxinx2jQpikPXBZwTrbiuRPah2IpA2wC1T0NLNhqku5uCdb4BSA9GbWj7oE6ID/PEmAG+DnUezJBNAAbkV5O5JawFtrJR3ekIAXX5JsJaUQ1/94kqZzDMDumen4tBofsZvjq78Uw+yeLGVG7ouNzUHHX3yNvDijaapU8gIb3Esxmzn/SwAAAABJRU5ErkJggg==" width="17" height="17" style="">
+                        </a>
+                        <div class="displaynone">
+                           <div class="col-sm-2 menuicon">
+                              
+							  <button class="navbar-toggle f-left" data-target=".dash" data-toggle="collapse" type="button">
+                              <i class="fa fa-bars"></i>
+                              </button>
+                           </div>
+                        </div>
+                        <div class="col-sm-10 f-right">
+                           <div class="username f-right ">
+                              <img class="icon icons8-User f-left " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+2T4REBMRCF36uAEuiADqgAFWiBCpwKaEEHpwI6oITTARWsWRMzJ5LbzNyEH+zfJO/bfftCZC5m1sePAESkB2ADYOAsPQNYkqwsi02LnPgJQNcTuwIYWpAUQAlgEul0T3LaNEUKQDvtREQqkv2cgAtJ3U+0UibIbpF2qKnxbbppqlovWWd3Sdp6MV1Y4vrWtMjKuXX+XYCI6OeaAxg5e56J0R+sezkC2JHUKAcrOoGIFABWlgXuvCC5Dt19A7iuD7WFJjIeE439aUKAptxbsJLkrH4pBBBLpfHnki+anwe06T5pyX+A78AdR5lMGQY/HL4AAAAASUVORK5CYII=" width="24" height="24">
+                              <div class="user-info f-left dispnone">
+                                 <p class="ng-binding">Hello kkraj@mail.me (superadmin)!</p>
+                              </div>
+                              
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+         
+      </div>
+      <div class="app main-container   ng-scope" id="app" ui-view="" style="">
+         <div class="dashboard_details ng-scope">
+            <aside id="aside" class="app-aside hidden-xs bg-dark">
+               <ul class="nav">
+                  <li data-ng-class="{ 'active': 'dashboard' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.dashboard.is_view == true" class="" style="">
+                     <a data-ui-sref=" app.dashboard" class="auto" href="#/dashboard">
+                     <i class="margleftic glyphicon icon">
+                     <img class="icon icons8-Dashboard" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABqklEQVQoU6VTXXISYRDsHhIr5EWOsN4AT+BSxAdYqSw34AbGE2Q9gXgC8QRZiwAPhmI9gdxAjrC+BEvYr1PfJovgX5Xl9zg13T3dMx/xH48/Y68Wi8bxt+JcQkygISAnkW5Oah/6rVa+338AHs8+hnB2ReArqEziilQAMRTwGOb6vc7zrCLYgT2QsoWAt9u6JcdrN6AscywCUDlkfpKXomtVBCXYj3p0676AeG/CMorao4p9NlsEW+c+G/DKEU0C55u6PfUWSvBkMh8ISAiLo6i13Pc1nsyXIPJt3eKjdRFSHBJIvEAJvp7cpL5BQNrrnqW+VtpwfAPiyaZeC6qwrqc3IwiNF9GZtwGMp/MMQgZzWeXH1wg8E/Cp122HD31DCDmI0NcOlGusJZ1Oa1UpQ5aALqkIyzWuC0/wQ7n0TFxS1ne2beyv4yA4FU2I73x4O88PjCuBo163ffGnoxtP50MK8ebUmru0dwHJFgCGm7q93r+me3J3CeDilz1XSvcJ2wiEfIA0rOQQ+IAgUOYGv72wisCrPLp1saBYZINSTjD9fmrpX2/7Xz/YHXLr4hBbv6KaAAAAAElFTkSuQmCC" width="15" height="15">
+                     </i>
+                     <span class="dispnone">Dashboard</span>
+                     </a>
+                  </li>
+                  <li data-ng-class="{ 'active': 'taskManagement' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.taskManagement.is_view == true" class="ng-hide">
+                     <a data-ui-sref=" app.taskManagement" class="auto" href="#/taskManagementList">
+                     <i class="glyphicon icon">
+						<img class="icon icons8-Dashboard" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABqklEQVQoU6VTXXISYRDsHhIr5EWOsN4AT+BSxAdYqSw34AbGE2Q9gXgC8QRZiwAPhmI9gdxAjrC+BEvYr1PfJovgX5Xl9zg13T3dMx/xH48/Y68Wi8bxt+JcQkygISAnkW5Oah/6rVa+338AHs8+hnB2ReArqEziilQAMRTwGOb6vc7zrCLYgT2QsoWAt9u6JcdrN6AscywCUDlkfpKXomtVBCXYj3p0676AeG/CMorao4p9NlsEW+c+G/DKEU0C55u6PfUWSvBkMh8ISAiLo6i13Pc1nsyXIPJt3eKjdRFSHBJIvEAJvp7cpL5BQNrrnqW+VtpwfAPiyaZeC6qwrqc3IwiNF9GZtwGMp/MMQgZzWeXH1wg8E/Cp122HD31DCDmI0NcOlGusJZ1Oa1UpQ5aALqkIyzWuC0/wQ7n0TFxS1ne2beyv4yA4FU2I73x4O88PjCuBo163ffGnoxtP50MK8ebUmru0dwHJFgCGm7q93r+me3J3CeDilz1XSvcJ2wiEfIA0rOQQ+IAgUOYGv72wisCrPLp1saBYZINSTjD9fmrpX2/7Xz/YHXLr4hBbv6KaAAAAAElFTkSuQmCC" width="15" height="15">
+                     </i>
+                     <span>MPH Creation</span>
+                     </a>
+                  </li>
+                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
+                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
+                     <i class="margleftic glyphicon icon">
+                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
+                     </i>
+                     <span class="dispnone">TPR Creation</span>
+                     </a>
+                  </li>
+                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
+                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
+                     <i class="margleftic glyphicon icon">
+                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
+                     </i>
+                     <span class="dispnone">Member Data</span>
+                     </a>
+                  </li>
+                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
+                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
+                     <i class="margleftic glyphicon icon">
+                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
+                     </i>
+                     <span class="dispnone">Generate Output</span>
+                     </a>
+                  </li>
+                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
+                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
+                     <i class="margleftic glyphicon icon">
+                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
+                     </i>
+                     <span class="dispnone">Validate Output</span>
+                     </a>
+                  </li>
+                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
+                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
+                     <i class="margleftic glyphicon icon">
+                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
+                     </i>
+                     <span class="dispnone">BO Team Validation</span>
+                     </a>
+                  </li>
+                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
+                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
+                     <i class="margleftic glyphicon icon">
+                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
+                     </i>
+                     <span class="dispnone">Quotation Generation</span>
+                     </a>
+                  </li>
+                  
+                  
+               </ul>
+            </aside>
+            <!-- uiView:  -->
+            <div ui-view="" class="content-area hidemenu ng-scope" style="">
+               
+			   <div class="app-content-body fade-in-up req-stock  ng-scope" data-ng-controller="salesorderListCtrl">
+                  <div class="panel panel-default ">
+                     <div class="panel-heading clearfix ">
+                        <h2>MPH</h2>
+                        <a data-ui-sref="app.salesorderAdd" ui-scroll-to="app" class="add_button add-dash" href="tpr-add.html">New TPR</a>
+                        <a href="javascript:void(0)" data-ng-click="refreshScreen()" class="add_button add-dash">Refresh</a>
+                     </div>
+                  </div>
+                  
+				  
+                  <div class=" animated fadeInUp clearfix ">
+                     <div class="panel panel-default wrapper-md notopmargin  ">
+                        <form name="quote_form" angular-validator-submit="" class="form-horizontal clearfix  ng-pristine ng-valid ng-valid-editable ng-valid-date ng-valid-angular-validator" novalidate="" angular-validator="">
+                           <div class="head_right table-search wrapper-sm clearfix ">
+                              <div class="sea">
+                                 <input name="InvoiceId" type="text" class="form-control qty a-right  ng-pristine ng-untouched ng-valid" placeholder="TPR / Company" data-ng-model="searchFilter.quoteId" data-ng-change="initTableFilter()" fname="quote_form">
+                                 <span class="glyphicon glyphicon-search head-right-search "></span>
+                              </div>
+                              <div class="sea">
+                                 <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-editable" name="customer_dropdown_" ng-model="searchFilter.customerInfo" placeholder="Created By" uib-typeahead="customer for customer in getCustomerList($viewValue)" typeahead-loading="loading" typeahead-no-results="noResults" typeahead-on-select="initTableFilter()" typeahead-min-length="0" typeahead-editable="false" typeahead-template-url="/public/admin/tpl/customer_dropdown__tpl.html" typeahead-input-formatter="formatCustomerModel($model)" autocomplete="off" aria-autocomplete="list" aria-expanded="false" aria-owns="typeahead-195-7088" fname="quote_form">
+                                 <!--
+								 <ul class="dropdown-menu ng-isolate-scope ng-hide" ng-show="isOpen() &amp;&amp; !moveInProgress" ng-style="{top: position().top+'px', left: position().left+'px'}" style="display: block;;display: block;" role="listbox" aria-hidden="true" uib-typeahead-popup="" id="typeahead-195-7088" matches="matches" active="activeIdx" select="select(activeIdx)" move-in-progress="moveInProgress" query="query" position="position" template-url="/public/admin/tpl/customer_dropdown__tpl.html">
+                                    <!-- ngRepeat: match in matches track by $index
+                                 </ul>
+								 -->
+                                 <span class="glyphicon glyphicon-search head-right-search "></span>                    
+                              </div>
+							  <div class="sea">
+                                 <input name="InvoiceId" type="text" class="form-control qty a-right  ng-pristine ng-untouched ng-valid" placeholder="Term" data-ng-model="searchFilter.quoteId" data-ng-change="initTableFilter()" fname="quote_form">
+                                 <span class="glyphicon glyphicon-search head-right-search "></span>
+                              </div>
+                              <div class="sea">
+                                 <input name="duedate" type="text" class="form-control ng-pristine ng-untouched ng-valid ng-isolate-scope ng-valid-date ng-valid-angular-validator" uib-datepicker-popup="yyyy/MM/dd" ng-model="searchFilter.duedate" is-open="duedateOpen" placeholder="Due Date" show-weeks="false" data-ng-change="initTableFilter()" datepicker-options="dateOptions" close-text="Close" validator="validationFactory.hasRequired(searchFilter.duedate)== false || validationFactory.maxDate(searchFilter.duedate,searchFilter.invoicedate)" fname="quote_form"><!-- ngIf: isOpen -->
+                                 <button type="button" class="btn btn-default btn-choose" ng-click="openDate(1)" fname="quote_form">
+                                 <i class="glyphicon glyphicon-calendar"></i>
+                                 </button>
+                              </div>
+                              <div class="sea">
+                                 <select class="form-control  ng-pristine ng-untouched ng-valid" ng-model="searchFilter.status" data-ng-change="initTableFilter()" name="statusdropdown" fname="quote_form">
+                                    <option value="">All Status</option>
+                                    <option value="paid">Paid</option>
+                                    <option value="unpaid">Unpaid</option>
+                                    <option value="partiallyPaid">Partially Paid</option>
+                                 </select>
+                              </div>
+                           </div>
+                        </form>
+                        <div class="table-responsive ">
+                           <table class="table no-link table-striped b-t  dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+                              <thead>
+                                 <tr role="row">
+                                    <th style="width:110px;" rowspan="1" colspan="1">
+                                       TPR Name
+                                    </th>
+                                    <th style="width:280px;" rowspan="1" colspan="1">
+                                       Company Name 
+                                    </th>                                                 
+                                    <th style="width:180px;" class=" " rowspan="1" colspan="1">
+                                       Term
+                                    </th>
+                                    <th style="width:180px;" class=" " rowspan="1" colspan="1">
+                                       Created By
+                                    </th>
+                                    <th style="width:200px;" rowspan="1" colspan="1">
+                                       Due Date
+                                    </th>
+                                    <th style="width:200px;" rowspan="1" colspan="1">
+                                       TPR
+                                    </th>
+                                    <th style="width:120px;" rowspan="1" colspan="1">
+                                       Member Data
+                                    </th>
+                                    <th style="width:120px;" rowspan="1" colspan="1">
+                                       Output Data
+                                    </th>
+                                    <th style="width:120px;" rowspan="1" colspan="1">
+                                       Quotation
+                                    </th>
+									
+                                    <th style="width:120px;" rowspan="1" colspan="1">
+                                       Status
+                                    </th>
+                                    <th style="width:180px;" rowspan="1" colspan="1">
+                                       Action
+                                    </th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+							  <!--
+                                 <tr data-ng-show="invoiceModel.isLoadingProgress" class="ng-hide">
+                                    <td colspan="8" class="text-left" style="padding: 0;">
+                                       <p class="loader-icon">
+                                          <img alt="loader" src="../img/loading.gif">
+                                       </p>
+                                    </td>
+                                 </tr>-->
+                                 <!-- ngIf: invoiceModel.list.length == 0 -->
+                                 <!-- ngRepeat: invoice in invoiceModel.list -->
+                                 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       001
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       L&T
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+											New Business
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       0024 - Raju
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       05-10-2017
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Link
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Link
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Generate / Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Pending BO
+										  </span>
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
+                                       </a>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
+                                       </a>
+                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
+                                       
+                                       </a>                                
+                                    </td>
+                                 </tr>
+                                 
+								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       022
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Tata Steel
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+											New Business
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       0024 - Raju
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       05-10-2017
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Link
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Link
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Generate / Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Pending BO
+										  </span>
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
+                                       </a>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
+                                       </a>
+                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
+                                       
+                                       </a>                                
+                                    </td>
+                                 </tr>
+                                 
+								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       003
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Welcome One
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+											New Business
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       0024 - Raju
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       05-10-2017
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Link
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Link
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Generate / Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Pending BO
+										  </span>
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
+                                       </a>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
+                                       </a>
+                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
+                                       
+                                       </a>                                
+                                    </td>
+                                 </tr>
+                                 
+								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       004
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Tata Services
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+											New Business
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       0024 - Raju
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       05-10-2017
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Link
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Link
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Generate / Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Pending BO
+										  </span>
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
+                                       </a>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
+                                       </a>
+                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
+                                       
+                                       </a>                                
+                                    </td>
+                                 </tr>
+                                 
+								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       005
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       MRF
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+											New Business
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       0024 - Raju
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       05-10-2017
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Link
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Link
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Generate / Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Pending BO
+										  </span>
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
+                                       </a>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
+                                       </a>
+                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
+                                       
+                                       </a>                                
+                                    </td>
+                                 </tr>
+                                 
+								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       006
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       IIT
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+											New Business
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       0024 - Raju
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       05-10-2017
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       Link
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Link
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Generate / Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Download
+										  </span>
+                                          
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                          <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
+											Pending BO
+										  </span>
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
+                                       </a>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
+                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
+                                       </a>
+                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
+                                       
+                                       </a>                                
+                                    </td>
+                                 </tr>
+                                 
+								 
+								 
+                              </tbody>
+                              <tfoot data-ng-hide="invoiceModel.list.length == 0" class="">
+                                 <tr>
+                                    <td colspan="3" class="text-left">
+                                       <label class="show_count_label ">Show</label>
+                                       <select name="perpage" ng-model="invoiceModel.limit" data-ng-hide="invoiceModel.list.length == 0" ng-options="page for page in pagePerCount" class="form-control show_count ng-pristine ng-untouched ng-valid" ng-change="initTableFilter()">
+                                          <option label="50" value="number:50" selected="selected">50</option>
+                                          <option label="100" value="number:100">100</option>
+                                       </select>
+                                    </td>
+                                    <td colspan="5" class="text-right">
+                                       <ul class="pagination-sm pagination ng-isolate-scope ng-valid" data-ng-hide="invoiceModel.list.length == 0" total-items="invoiceModel.total" ng-model="invoiceModel.currentPage" ng-change="getinvoiceListInfo()" items-per-page="invoiceModel.limit" max-size="5" rotate="false" boundary-links="true">
+                                          <!-- ngIf: ::boundaryLinks -->
+                                          <li ng-if="::boundaryLinks" ng-class="{disabled: noPrevious()||ngDisabled}" class="pagination-first ng-scope disabled"><a href="" ng-click="selectPage(1, $event)" class="ng-binding">First</a></li>
+                                          <!-- end ngIf: ::boundaryLinks -->
+                                          <!-- ngIf: ::directionLinks -->
+                                          <li ng-if="::directionLinks" ng-class="{disabled: noPrevious()||ngDisabled}" class="pagination-prev ng-scope disabled"><a href="" ng-click="selectPage(page - 1, $event)" class="ng-binding">Previous</a></li>
+                                          <!-- end ngIf: ::directionLinks -->
+                                          <!-- ngRepeat: page in pages track by $index -->
+                                          <li ng-repeat="page in pages track by $index" ng-class="{active: page.active,disabled: ngDisabled&amp;&amp;!page.active}" class="pagination-page ng-scope active"><a href="" ng-click="selectPage(page.number, $event)" class="ng-binding">1</a></li>
+                                          <!-- end ngRepeat: page in pages track by $index -->
+                                          <!-- ngIf: ::directionLinks -->
+                                          <li ng-if="::directionLinks" ng-class="{disabled: noNext()||ngDisabled}" class="pagination-next ng-scope disabled"><a href="" ng-click="selectPage(page + 1, $event)" class="ng-binding">Next</a></li>
+                                          <!-- end ngIf: ::directionLinks -->
+                                          <!-- ngIf: ::boundaryLinks -->
+                                          <li ng-if="::boundaryLinks" ng-class="{disabled: noNext()||ngDisabled}" class="pagination-last ng-scope disabled"><a href="" ng-click="selectPage(totalPages, $event)" class="ng-binding">Last</a></li>
+                                          <!-- end ngIf: ::boundaryLinks -->
+                                       </ul>
+                                    </td>
+                                 </tr>
+                              </tfoot>
+                           </table>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- ngIf: showdeletePopup -->
+                  <!-- ngIf: showdeletePopup -->  
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- JavaScripts -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   
+	<script >
+		jQuery.noConflict();
+		
+		jQuery(document).ready(function(){
+			jQuery('.menu-toggle').click(function(){
+				jQuery('body').toggleClass(' menu-open');
+			});
+			
+		
+		});
+		
+	</script>
+   
+   </body>
+</html>
