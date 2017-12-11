@@ -132,24 +132,24 @@
                            <form name="create_customer_form" angular-validator-submit="createcustomer()" class="form-horizontal clearfix  ng-pristine ng-valid-maxlength ng-invalid ng-invalid-required ng-valid-angular-validator" novalidate="" angular-validator="">
                               <div class="bg-white  ">
                                  <div class="row wrapper-md">
-                                    <div class="col-sm-5 ">
+                                    <div class="col-sm-12 ">
                                        <div class="row ">
-                                          <div class="col-sm-5 topmarginxs right ">
+                                          <div class="col-sm-1 topmarginxs right ">
                                              <label>Product<em>*</em></label>
                                           </div>
-                                          <div class="col-sm-7 bottommarginsm">
-                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength ng-valid-angular-validator" name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+                                          <div class="col-sm-3 bottommarginsm">
+                                             <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
                                           </div>
-                                          <div class="col-sm-5 topmarginxs right ">
+                                          <div class="col-sm-1 topmarginxs right ">
                                              <label>TPR Name <em>*</em></label>
                                           </div>
-                                          <div class="col-sm-7 bottommarginsm">
+                                          <div class="col-sm-3 bottommarginsm">
                                              <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" name="customerprefix" ng-model="customerAddModel.customerprefix" placeholder="Customer Prefix" maxlength="20" fname="create_customer_form">
                                           </div>
-                                          <div class="col-sm-5 topmarginxs right ">
+                                          <div class="col-sm-1 topmarginxs right ">
                                              <label>QRF ID*</label>
                                           </div>
-                                          <div class="col-sm-7 bottommarginsm">
+                                          <div class="col-sm-3 bottommarginsm">
                                              <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Full Name" maxlength="35" required="" fname="create_customer_form">
                                           </div>
                                           
@@ -159,45 +159,60 @@
                                        
                                     </div>
 									
-									<div class="col-sm-5 ">
+									<hr class="topmarginsm bottommarginsm hr-set">
+									
+									<div class="col-sm-10 topmarginsm ">
 										<div class="row ">
-											<div class="col-sm-12 ">
+											<div class="col-sm-2 ">
 												<h2>MPH Details</h2>
 											</div>
-                                          <div class="col-sm-5 topmarginxs right ">
-                                             <label>MPH (Client) Name</label>
-                                          </div>
-                                          <div class="col-sm-7 bottommarginsm">
-                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength ng-valid-angular-validator" name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
-                                          </div>
-                                          <div class="col-sm-5 topmarginxs right ">
-                                             <label>MPH ID</label>
-                                          </div>
-                                          <div class="col-sm-7 bottommarginsm">
-                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength ng-valid-angular-validator" name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
-                                          </div>
-                                          <div class="col-sm-5 topmarginxs right ">
-                                             <label>City</label>
-                                          </div>
-                                          <div class="col-sm-7 bottommarginsm">
-                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength ng-valid-angular-validator" name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
-                                          </div>
-                                          <div class="col-sm-5 topmarginxs right ">
-                                             <label>Industry</label>
-                                          </div>
-                                          <div class="col-sm-7 bottommarginsm">
-                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength ng-valid-angular-validator" name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
-                                          </div>
-										  
-                                          <div class="col-sm-5 topmarginxs right ">
-                                             <label>Active Policy</label>
-                                          </div>
-                                          <div class="col-sm-7 bottommarginsm">
-                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength ng-valid-angular-validator" name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
-                                          </div>
+											<div class="col-sm-6 ">
+												<div class="row ">
+													<div class="col-sm-5 topmarginxs right ">
+													 <label>MPH (Client) Name</label>
+												  </div>
+												  <div class="col-sm-7 bottommarginsm">
+													 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+												  </div>
+												</div>
+											</div>
+											<div class="col-sm-12 ">
+												
+												<div class="row ">
+												
+													  <div class="col-sm-1 topmarginxs right ">
+														 <label>MPH ID</label>
+													  </div>
+													  <div class="col-sm-2 bottommarginsm">
+														 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													  </div>
+													  <div class="col-sm-1 topmarginxs right ">
+														 <label>City</label>
+													  </div>
+													  <div class="col-sm-2 bottommarginsm">
+														 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													  </div>
+													  <div class="col-sm-1 topmarginxs right ">
+														 <label>Industry</label>
+													  </div>
+													  <div class="col-sm-2 bottommarginsm">
+														 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													  </div>
+													  
+													  <div class="col-sm-1 topmarginxs right ">
+														 <label>Active Policy</label>
+													  </div>
+													  <div class="col-sm-2 bottommarginsm">
+														 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													  </div>
+													
+												</div>
+											
+											</div>
+                                          
                                         </div>
 									</div>
-									<div class="col-sm-2 ">
+									<div class="col-sm-2 topmargin  ">
 										<a data-ui-sref="app.salesorderAdd" ui-scroll-to="app" class="add_button add-dash" href="tpr-add.html">
 											New MPH
 										</a>
@@ -206,14 +221,358 @@
                               </div>
 							
 							</form>
+							
+						<hr class="topmarginsm bottommarginsm hr-set">
                         </div>
-						
 						<div class="  clearfix add-form form-wrapper">
                            
 							<div class="bg-white  ">
                                  <div class="row wrapper-md notoppadding ">
-									<div class="col-sm-12 ">
-										asfd
+									<div class="col-sm-12 toppaddingsm  ">
+										<ul class="tpr-ed-tab  clearfix  ">
+											<li class="term active-tab">
+												Term
+											</li>
+											<li class="rider">
+												Riders
+											</li>
+											<li class="climexp">
+												Claim Exp
+											</li>
+											<li class="currnt-ins">
+												Current Insurance
+											</li>
+											<li class="enclos">
+												Enclosures
+											</li>
+										</ul>
+										
+										<div class="term-tab tab-expnd ">
+											<div class="tab-expnd-inner clearfix ">
+												<form class="clearfix ">
+												<div class="clearfix ">
+													<h2>
+														Term Details
+													<h2>
+													<div class="row ">
+														<div class="col-sm-8 ">
+															<div class="row ">
+																<div class="col-sm-2 right  ">
+																	<label>Term: <em>*</em></label>
+																</div>
+																<div class="col-sm-4">
+																	<select name="cars" multiple class="form-control">
+																	  <option value="volvo">New Business</option>
+																	  <option value="saab">Renewal</option>
+																	  <option value="opel">Revival</option>
+																	  <option value="audi">Audi</option>
+																	</select>
+																</div>
+																<div class="col-sm-1 right ">
+																	<label>Group Type: <em>*</em></label>
+																</div>
+																<div class="col-sm-4">
+																	<select name="cars" multiple class="form-control">
+																	  <option value="volvo">Employer - Employee</option>
+																	  <option value="saab">Non Employer - Employee</option>
+																	  
+																	</select>
+																</div>
+															</div>
+														</div>
+														<div class="col-sm-4 ">
+															<h3>Renewal Details</h3>
+															
+															<div class="row ">
+															
+																<div class="col-sm-4 right toppaddingsm bottompaddingsm">
+																	<label class="topmarginsm" >Policy No: </label>
+																</div>
+																<div class="col-sm-8 toppaddingsm bottompaddingsm">
+																	<input type="text" class="form-control " >
+																</div>
+																<div class="col-sm-4 right topmarginsm bottompaddingsm">
+																	<label class="topmarginsm">Policy Date:</label>
+																</div>
+																<div class="col-sm-8 toppaddingsm bottompaddingsm	">
+																	<input type="text" class="form-control " >
+																</div>
+															
+															</div>
+															
+														</div>
+													</div>
+													<hr class="topmarginsm bottommarginsm hr-set">
+													<h2>
+														Intermediary
+													</h2>
+													<div class="row ">
+													
+														<div class="col-sm-4 ">
+															<div class="row ">
+																<div class=" col-sm-4 ">
+																	<label class="topmarginsm">Type:<em>*</em></label>
+																</div>
+																<div class=" col-sm-8 ">
+																	<select name="cars" multiple class="form-control">
+																	  <option value="volvo">Direct</option>
+																	  <option value="saab">Corporate Agent</option>
+																	  <option value="opel">Broker</option>
+																	  <option value="audi">Individual Agent</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+														<div class="col-sm-4 ">
+															<div class="row ">
+																<div class="col-sm-4 right ">
+																	<label class="topmarginsm">Code:<em>*</em></label>
+																</div>
+																<div class="col-sm-8 ">
+																		<input type="text" class="form-control " >
+																</div>
+																<div class="col-sm-4 topmarginsm right ">
+																	<label class="topmarginsm">Name:<em>*</em></label>
+																</div>
+																<div class="col-sm-8 topmarginsm ">
+																		<input type="text" class="form-control " placeholder="Name" >
+																</div>
+															</div>
+														</div>
+														<div class="col-sm-4 ">
+															<div class="row ">
+																<div class=" col-sm-4 right ">
+																	<label class="topmarginsm">Channel:<em>*</em></label>
+																</div>
+																<div class=" col-sm-8 ">
+																	<select name="cars" multiple class="form-control">
+																	  <option value="volvo">Banc assurance</option>
+																	  <option value="saab">Corporate Solutions</option>
+																	  <option value="opel">Institutional Alliance</option>
+																	  <option value="audi">Micro Insurance</option>
+																	</select>
+																</div>
+															</div>
+														</div>
+													
+													</div>
+													
+													<hr class="topmarginsm bottommarginsm hr-set">
+													<h2>
+														Scheme
+													</h2>
+													
+													<div class="row ">
+														<div class="col-sm-6 ">
+															<div class="row ">
+															
+																<div class="col-sm-2 right ">
+																	<label class=" ">Type:<em>*</em></label>
+																</div>
+																<div class="col-sm-4 ">
+																	<select name="cars" multiple class="form-control">
+																	  <option value="volvo">Mandatory</option>
+																	  <option value="saab">Voluntary</option>
+																	</select>
+																</div>
+																<div class="col-sm-3 right " >
+																	<label class="">Participation Level:<em>*</em></label>
+																</div>
+																<div class="col-sm-3 ">
+																	<input type="text" class="form-control" />
+																</div>
+															
+																<div class="col-sm-12 toppadding bottommarginsm">
+																	<h5>Retirement Age Categories</h5>
+																	
+																</div>
+																<div class="col-sm-12  ">
+																	<div class="row ">
+																		<div class="col-sm-4 right toppaddingsm ">
+																			<label class="">Category 1:<em>*</em></label>
+																		</div>
+																		<div class="col-sm-2 ">
+																			<input type="text" class="form-control " />
+																		</div>
+																		<div class="col-sm-2 toppaddingsm">
+																			Years
+																		</div>
+																		<div class="col-sm-2 toppaddingsm ">
+																			
+																		</div>
+																	</div>
+																	<div class="row toppaddingsm ">
+																		<div class="col-sm-4 right toppaddingsm ">
+																			<label class="">Category 2:<em>*</em></label>
+																		</div>
+																		<div class="col-sm-2 ">
+																			<input type="text" class="form-control " />
+																		</div>
+																		<div class="col-sm-2 toppaddingsm">
+																			Years
+																		</div>
+																		<div class="col-sm-2 toppaddingsm ">
+																			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABPSURBVDhPYxgF9AHGxsYrQBjKpRwYGRldAmEol3IwzA2ERsAZZAw07BsIo4sDMeGIAilC00SZgdgAyLsgDOVSDkaggaDAJzsCRgGJgIEBAAWHPQlXxZK3AAAAAElFTkSuQmCC">
+																		</div>
+																	</div>
+																</div>
+															
+															</div>
+														</div>
+														<div class="col-sm-6 ">
+															<div class="row ">
+																<div class="col-sm-4 right  ">
+																	<label class="">Premium By:<em>*</em></label>
+																</div>
+																<div class="col-sm-8 ">
+																	<select name="cars" multiple class="form-control"  >
+																	  <option value="volvo">Employer</option>
+																	  <option value="saab">Employee</option>
+																	  <option value="saab">Both</option>
+																	</select>
+																	<br>
+																	OR
+																	<select name="cars" multiple class="form-control">
+																	  <option value="volvo">Member</option>
+																	  <option value="saab">Institution</option>
+																	  <option value="saab">Both</option>
+																	</select>
+																	
+																</div>
+															</div>
+														</div>
+														
+														<div class="col-sm-6 ">
+															
+															<h5 class="toppadding bottommarginsm">Coverage</h5>
+															<div class="col-sm-8 right toppaddingsm ">
+																<label class="">Total no of members in the Group: </label>
+															</div>
+															<div class="col-sm-2 ">
+																<input type="text" class="form-control" />
+															</div>
+															<div class="col-sm-8 right toppaddingsm topmarginsm ">
+																<label class="">No of Members to be covered: </label>
+															</div>
+															<div class="col-sm-2 topmarginsm ">
+																<input type="text" class="form-control" />
+															</div>
+														</div>
+														<div class="col-sm-12 ">&nbsp;</div>
+														<div class="col-sm-6 ">
+														
+															<h5 class="toppadding bottommarginsm">Death Benefits</h5>
+															
+															<input id="death-fl" type="radio" name="deathben" class="" checked />
+															<label for="death-fl">
+																Flat
+															</label><br/>
+															<input id="death-gr" type="radio" name="deathben" class="" />
+															<label for="death-gr">
+																Graded
+															</label><br/>
+															<input id="death-fea-gra" type="radio" name="deathben" class="" />
+															<label for="death-fea-gra">
+																Feature Service gratuity cover
+															</label>
+															<br/>
+															<input id="death-fea-leave" type="radio" name="deathben" class="" />
+															<label for="death-fea-leave">
+																Feature service leave encashment cover
+															</label>
+															<br/>
+															<input id="death-ml-sal" type="radio" name="deathben" class="" />
+															<label for="death-ml-sal">
+																Multiple of salary/CTC
+															</label>
+															<br/>
+															
+															<input id="death-out-sal" type="radio" name="deathben" class="" />
+															<label for="death-out-sal">
+																Outstanding salary/CTC
+															</label>
+															<br/>
+															
+															<input id="death-out-loan" type="radio" name="deathben" class="" />
+															<label for="death-out-loan">
+																Outstanding Loan amount
+															</label>
+															<br/>
+															<input id="death-any" type="radio" name="deathben" class="" />
+															<label for="death-any">
+																Any Other
+															</label>
+															<br/>
+															
+															<label>
+																Comments
+															</label>
+															<br/>
+															<textarea class="form-control" placeholder="Any Comments"></textarea>
+															
+														</div>
+														
+														
+													</div>
+													<hr class="topmarginsm bottommarginsm hr-set">
+													<h2>
+														Miscellaneous
+													</h2>
+													
+													<div class="row ">
+														<div class="col-sm-2 right">
+															<label>Frequency of Premium payment</label>
+														</div>
+														<div class="col-sm-2 ">
+															<select name="cars" multiple class="form-control">
+															  <option value="volvo">Montlhy</option>
+															  <option value="saab">Quarterly</option>
+															  <option value="saab">Half Yearly</option>
+															  <option value="saab">Yearly</option>
+															</select>
+														</div>
+														
+														<div class="col-sm-2 right">
+															<label>Tentative data of commencement or Renewal*</label>
+														</div>
+														<div class="col-sm-2 ">
+															<input type="text" class="form-control" />
+														</div>
+														<div class="col-sm-2 right">
+															<label>Date of submission*</label>
+														</div>
+														<div class="col-sm-2 ">
+															<input type="text" class="form-control" />
+														</div>
+														
+													</div>
+													
+													
+													
+													
+													
+													
+												</div>
+												</form>
+											</div>
+										</div>
+										
+										<div class="rider-tab tab-expnd	">
+											<h2>Riders Tab</h2>
+										</div>
+										
+										<div class="claim-tab tab-expnd ">
+											<h2>Claim Tab</h2>
+										</div>
+										
+										<div class="curnt-ins-tab tab-expnd ">
+											<h2>Current Insurance Tab</h2>
+										</div>
+										
+										<div class="enclo-tab tab-expnd ">
+											<h2>Enclosure Tab</h2>
+										</div>
+										
 									</div>
 								 </div>
 							</div>
@@ -250,6 +609,38 @@
          		jQuery('body').toggleClass(' menu-open');
          	});
          	
+			jQuery('.tpr-ed-tab li').click(function(){
+         		jQuery('.tab-expnd').hide();
+				
+				jQuery('.tpr-ed-tab li').removeClass(' active-tab');
+				
+				jQuery('.wrapper-md').animate({ //animate element that has scroll
+					scrollTop: 340 //for scrolling
+				}, 1000);
+				
+         	});
+			
+			jQuery('.tpr-ed-tab li.term').click(function(){
+         		jQuery('.term-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			jQuery('.tpr-ed-tab li.rider').click(function(){
+         		jQuery('.rider-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			jQuery('.tpr-ed-tab li.climexp').click(function(){
+         		jQuery('.claim-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			jQuery('.tpr-ed-tab li.currnt-ins').click(function(){
+         		jQuery('.curnt-ins-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			jQuery('.tpr-ed-tab li.enclos').click(function(){
+         		jQuery('.enclo-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			
          
          });
          
