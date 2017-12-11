@@ -2947,3 +2947,15 @@ table > tr > td.child
 .tier-left{
     margin-left: 93px;
 }
+
+
+.tpr-ed-tab  { display: flex; margin: 0 0 -1px 0; position: relative;}
+.tpr-ed-tab  li { padding: 10px 15px; margin-right: 15px; border: 1px solid #efefef;}
+.tpr-ed-tab  li.active-tab { border-bottom-color: #FFF; }
+
+.tab-expnd { border: 1px solid #efefef; padding: 15px;  }
+.tab-expnd form {float: none;}
+.tab-expnd select {width: 100%; max-width: 100%;}
+
+
+
