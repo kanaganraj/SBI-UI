@@ -2068,13 +2068,17 @@ back-header .head-right {
 /*bhavani*/
 .imgalign
 {
-    border: 2px solid #faf9f9;
-    width: 146px;
-    height: 150px;
-    border-radius: 50%;
+    width: 330px;
+    height: 330px;
+    border-radius: 100%;
     background-color: white;
-    margin-left: 133px;
-    margin-bottom: -86px; padding: 20px 0 0;
+    margin-left: 60px;
+    margin-bottom: -236px;
+    padding: 40px 0 0;
+}
+.imgalign img
+{
+	width: 60%;
 }
 .imgcenter{
     width: 101px;
