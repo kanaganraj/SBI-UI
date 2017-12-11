@@ -99,6 +99,11 @@ header h1 {
 header h1 a {
     color: #f05050;
 }
+.menu-toggle .out {display: none;}
+.menu-toggle .in {  }
+.menu-open .menu-toggle .out { display: block; }
+.menu-open .menu-toggle .in { display: none; }
+
 .username .user-settings { position: absolute; right: -500px; top: 60px; width: 370px;     padding: 0px 0;
                            margin: 2px 0 0;
                            list-style: none;
@@ -2948,16 +2953,48 @@ table > tr > td.child
     margin-left: 93px;
 }
 
+.wrapper-md form {float: none;}
 
 .tpr-ed-tab  { display: flex; margin: 0 0 -1px 0; position: relative;}
-.tpr-ed-tab  li { padding: 10px 15px; margin-right: 15px; border: 1px solid #efefef;}
-.tpr-ed-tab  li.active-tab { border-bottom-color: #FFF; }
+.tpr-ed-tab  li { padding: 10px 15px; margin-right: 15px; border: 1px solid #efefef; cursor: pointer;
+-webkit-transition: all ease-in-out .3s;
+    -o-transition: all ease-in-out .3s;
+    transition: all ease-in-out .3s;
+}
+.tpr-ed-tab  li.active-tab, 
+.tpr-ed-tab  li:hover { border-color: #FFF; background: #03a9f3; color: #FFF;}
 
 .tab-expnd { border: 1px solid #efefef; padding: 15px;  }
 .tab-expnd {display: none;}
 .term-tab {display: block;}
 .tab-expnd form {float: none;}
 .tab-expnd select {width: 100%; max-width: 100%;}
+
+.tab-expnd [type="radio"]:not(:checked) + label:before, 
+.tab-expnd [type="radio"]:checked + label:before, 
+.tab-expnd [type="checkbox"]:not(:checked) + label:before, 
+.tab-expnd [type="checkbox"]:checked + label:before {
+	top: 4px;
+}
+
+.tab-expnd [type="radio"]:not(:checked) + label:after, 
+.tab-expnd [type="radio"]:checked + label:after, 
+.tab-expnd [type="checkbox"]:not(:checked) + label:after, 
+.tab-expnd [type="checkbox"]:checked + label:after  {
+	top: 6px;
+    left: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
