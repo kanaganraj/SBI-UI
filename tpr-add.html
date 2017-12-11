@@ -23,7 +23,7 @@
                <div class="head-right clearfix navbar-header">
                   <div class="col-sm-12">
                      <div class="row">
-                        <a href="javascript:void(0)" class="btn menu-toggle no-shadow navbar-btn toppadding" ng-click="expandHandler()">
+                        <a href="javascript:void(0)" class="btn menu-toggle no-shadow navbar-btn toppaddingsm " ng-click="expandHandler()">
                         <img class="icon icons8-Outdent out ng-hide" ng-show="!appConfig.navMenuExpand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAApElEQVQ4T62T3Q2DMBCD7Q06Ahu0I7BJGaGdpB2BUcImdBIjo1C1EhEH5F7ykPMX30+ICkFJNwCvE6wnT4i/0joQSRcA14CjD8lRUuPzN989aQB0AUgimSQlAD3JftHsLidD7MTQGXQIQrKVZMAMOlSOIXYgyY7aOk4CDf1LWe1Jns49ABuK08l74tXfirG4J1vKyP3uxq5Bl1/8jrxYyHlUcTIBYixZiY5vdLgAAAAASUVORK5CYII=" width="17" height="17" style="">
                         <img class="icon icons8-Indent in" ng-show="appConfig.navMenuExpand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAArElEQVQ4T62T0Q3CMAxEnzdgBDaAEdgERiiTwAgdgQ1aNmCEMskhoxQVkaoOjaV85fxinx2jQpikPXBZwTrbiuRPah2IpA2wC1T0NLNhqku5uCdb4BSA9GbWj7oE6ID/PEmAG+DnUezJBNAAbkV5O5JawFtrJR3ekIAXX5JsJaUQ1/94kqZzDMDumen4tBofsZvjq78Uw+yeLGVG7ouNzUHHX3yNvDijaapU8gIb3Esxmzn/SwAAAABJRU5ErkJggg==" width="17" height="17" style="">
                         </a>
@@ -213,7 +213,7 @@
                                         </div>
 									</div>
 									<div class="col-sm-2 topmargin  ">
-										<a data-ui-sref="app.salesorderAdd" ui-scroll-to="app" class="add_button add-dash" href="tpr-add.html">
+										<a class="add_button add-dash" href="mph-add.html">
 											New MPH
 										</a>
 									</div>
@@ -558,20 +558,458 @@
 											</div>
 										</div>
 										
-										<div class="rider-tab tab-expnd	">
-											<h2>Riders Tab</h2>
+										<div class="rider-tab tab-expnd	clearfix">
+											
+											<div class="col-sm-3 ">
+												<input id="option-1" type="checkbox" class="form-control" />
+												<label for="option-1">
+													Option 1
+												</label>
+												
+												<div class="opt-det">
+												
+													<ul>
+														<li>
+														<b>1. Accident and Sickness Total permanent disability</b>
+															<br/> (100% base cover or Max 25L)<br/> <br/> 
+														</li>
+														<li>
+														<b>2. Accident Total permanent disability</b>
+															<br/> (100% base cover or Max 50L)
+														</li>
+													</ul>
+												
+												</div>
+												
+											</div>
+											<div class="col-sm-3 ">
+												<input id="option-2" type="checkbox" class="form-control" />
+												<label for="option-2">
+													Option 2
+												</label>
+												
+												<div class="opt-det">
+												
+													<ul>
+														<li>
+														<b>1. Accidental death</b>
+															<br/> (100% base cover or Max 50L)
+														</li>
+													</ul>
+												
+												</div>
+												
+											</div>
+											<div class="col-sm-3 ">
+												<input id="option-2" type="checkbox" class="form-control" />
+												<label for="option-2">
+													Option 3
+												</label>
+												
+												<div class="opt-det">
+												
+													<ul>
+														<li>
+														<b>1. Accidental partial permanent disability</b>
+															<br/> (100% base cover or Max 50L)
+														</li>
+													</ul>
+												
+												</div>
+												
+											</div>
+											<div class="col-sm-3 ">
+												<input id="option-2" type="checkbox" class="form-control" />
+												<label for="option-2">
+													Option 4
+												</label>
+												
+												<div class="opt-det">
+												
+													<ul>
+														<li>
+														<b>1. Accelerated - Core critical illness</b>
+															<br/> <br/> 
+														</li>
+														<li>
+														<b>2. Accelerated – Extended critical illness</b>
+															<br/> <br/> 
+														</li>
+														<li>
+														<b>3. Accelerated – Additional Core critical illness</b>
+															<br/> <br/> 
+														</li>
+														<li>
+														<b>4. Accelerated – Additional Extended critical illness</b>
+															<br/> 
+														</li>
+													</ul>
+												
+												</div>
+												
+											</div>
+											
+											
 										</div>
 										
-										<div class="claim-tab tab-expnd ">
-											<h2>Claim Tab</h2>
+										<div class="claim-tab tab-expnd clearfix">
+											
+											<div class="col-sm-2 right ">
+												<label class="toppaddingsm">Updated By:<em>*</em></label>
+											</div>
+											<div class="col-sm-4 ">
+												<select class="form-control">
+													<option>Client</option>
+													<option>Sales</option>
+													<option>Bank Office</option>
+												</select>
+											</div>
+											<div class="col-sm-2 right ">
+												<label class="toppaddingsm" >Extracted on:<em>*</em></label>
+											</div>
+											<div class="col-sm-4 ">
+												<input type="text" class="form-control" />
+											</div>
+											
+											<div class="col-sm-12 topmarginsm ">
+												<table class="table no-link table-striped b-t  dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+													  <thead>
+														 <tr role="row">
+															<th style="width:210px;" rowspan="1" colspan="1">
+															   Scheme Year Start Date and Scheme Year End Date
+															</th>
+															<th style="width:180px;" rowspan="1" colspan="1">
+															   Total Number of Deaths
+															</th>                                                 
+															<th style="width:220px;" class=" " rowspan="1" colspan="1">
+															   Total Claim Amount (INR)
+															</th>
+															<th style="width:280px;" class=" " rowspan="1" colspan="1">
+															   Total Number of Members at the beginning of scheme year
+															</th>
+															<th style="width:220px;" rowspan="1" colspan="1">
+															   Total Cover Amount (INR)
+															</th>
+															<th style="width:200px;" rowspan="1" colspan="1">
+															   Data obtained from
+															</th>
+														 </tr>
+													  </thead>
+													  <tbody>
+													  <!--
+														 <tr data-ng-show="invoiceModel.isLoadingProgress" class="ng-hide">
+															<td colspan="8" class="text-left" style="padding: 0;">
+															   <p class="loader-icon">
+																  <img alt="loader" src="../img/loading.gif">
+															   </p>
+															</td>
+														 </tr>-->
+														 <!-- ngIf: invoiceModel.list.length == 0 -->
+														 <!-- ngRepeat: invoice in invoiceModel.list -->
+														 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	2009-10
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																16
+															   </a>
+															</td>
+
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+																	992,000
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+																	12,268
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	11,000
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	Sales Intermediary
+															   </a>
+															</td>
+															
+														 </tr>
+														 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	2011-12
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																16
+															   </a>
+															</td>
+
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+																	992,000
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+																	12,268
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	11,000
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	Sales Intermediary
+															   </a>
+															</td>
+															
+														 </tr>
+														 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	2012-13
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																16
+															   </a>
+															</td>
+
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+																	992,000
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+																	12,268
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	11,000
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	Sales Intermediary
+															   </a>
+															</td>
+															
+														 </tr>
+														 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	2013 - Till date
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																16
+															   </a>
+															</td>
+
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+																	992,000
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+																	12,268
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	11,000
+															   </a>
+															</td>
+															<td>
+															   <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+																	Sales Intermediary
+															   </a>
+															</td>
+															
+														 </tr>
+													 </tbody>
+												 </table>
+											</div>
+											
+											<div class="col-sm-12 topmarginsm " >
+												<div class="row ">
+													<div class="col-sm-2 ">
+														<label class="topmarginsm ">Other Remarks:</label>
+													</div>
+													<div class="col-sm-6 ">
+														<textarea class="form-control" ></textarea>
+													</div>
+												</div>
+											</div>
+											
 										</div>
 										
-										<div class="curnt-ins-tab tab-expnd ">
-											<h2>Current Insurance Tab</h2>
+										<div class="curnt-ins-tab tab-expnd clearfix">
+											<div class="col-sm-6 ">
+												<div class="row ">
+													<div class="col-sm-3 topmarginsm">
+														<label>Existing insurer:</label>
+													</div>
+													<div class="col-sm-7 bottommarginsm ">
+														<input type="text" class="form-control" />
+													</div>
+													<div class="col-sm-3 ">
+														<label>Premium paid per Rs. 1000 SA (excluding taxes)</label>
+													</div>
+													<div class="col-sm-7 bottommarginsm  ">
+														<input type="text" class="form-control" />
+													</div>
+													<div class="col-sm-12">&nbsp;</div>
+													<div class="col-sm-3 ">
+														<label>FCL in existing scheme:</label>
+													</div>
+													<div class="col-sm-7 bottommarginsm  ">
+														<input type="text" class="form-control" />
+													</div>
+												</div>
+											</div>
+											
+											<div class="col-sm-6 ">
+												<div class="row ">
+													<div class="col-sm-3 ">
+														<label>Any other comments on existing cover</label>
+													</div>
+													<div class="col-sm-7 ">
+														<textarea class="form-control"></textarea>
+													</div>
+												</div>
+											</div>
+											
 										</div>
 										
-										<div class="enclo-tab tab-expnd ">
-											<h2>Enclosure Tab</h2>
+										<div class="enclo-tab tab-expnd	clearfix ">
+											<div class="col-sm-3 ">
+												<label class="topmarginsm">Census data:<em>*</em></label>
+											</div>
+											<div class="col-sm-8 ">
+												<textarea class="form-control"></textarea>
+											</div>
+											<div class="col-sm-3 topmarginsm">
+												<label class="topmarginsm">Census data given by client:<em>*</em></label>
+											</div>
+											<div class="col-sm-8  topmarginsm">
+												<div class="row ">
+													<div class="col-sm-2  topmarginsm ">
+														<input id="census-data-y" type="radio" name="census" class="" checked />
+														<label for="census-data-y">
+															Yes
+														</label>
+														<input id="census-data-n" type="radio" name="census" class="" />
+														<label for="census-data-n">
+															No
+														</label>
+													</div>
+													<div class="col-sm-4 ">
+														<input type="file" class="form-control" />
+													</div>
+												</div>
+											</div>
+											
+											<div class="col-sm-3 topmarginsm">
+												<label class="topmarginsm">Tender document: </label>
+											</div>
+											<div class="col-sm-8  topmarginsm">
+												<div class="row ">
+													<div class="col-sm-2  topmarginsm ">
+														<input id="tende-data-y" type="radio" name="tende" class="" checked />
+														<label for="tende-data-y">
+															Yes
+														</label>
+														<input id="tende-data-n" type="radio" name="tende" class="" />
+														<label for="tende-data-n">
+															No
+														</label>
+													</div>
+													<div class="col-sm-4 ">
+														<input type="file" class="form-control" />
+													</div>
+												</div>
+											</div>
+											
+											<div class="col-sm-3 topmarginsm">
+												<label class="topmarginsm">Broker slip: </label>
+											</div>
+											<div class="col-sm-8  topmarginsm">
+												<div class="row ">
+													<div class="col-sm-2 topmarginsm ">
+														<input id="broker-data-y" type="radio" name="broker" class="" checked />
+														<label for="broker-data-y">
+															Yes
+														</label>
+														<input id="broker-data-n" type="radio" name="broker" class="" />
+														<label for="broker-data-n">
+															No
+														</label>
+													</div>
+													<div class="col-sm-4 ">
+														<input type="file" class="form-control" />
+													</div>
+												</div>
+											</div>
+											
+											<div class="col-sm-3 topmarginsm">
+												<label class="topmarginsm">Affinity form: </label>
+											</div>
+											<div class="col-sm-8  topmarginsm">
+												<div class="row ">
+													<div class="col-sm-2  topmarginsm ">
+														<input id="affin-data-y" type="radio" name="affin" class="" checked />
+														<label for="affin-data-y">
+															Yes
+														</label>
+														<input id="affin-data-n" type="radio" name="affin" class="" />
+														<label for="affin-data-n">
+															No
+														</label>
+													</div>
+													<div class="col-sm-4 ">
+														<input type="file" class="form-control" />
+													</div>
+												</div>
+											</div>
+											
+											<div class="col-sm-3 topmarginsm">
+												<label class="topmarginsm">Current policy document (if renewal) </label>
+											</div>
+											<div class="col-sm-8  topmarginsm">
+												<div class="row ">
+													<div class="col-sm-2  topmarginsm ">
+														<input id="currnt-data-y" type="radio" name="currnt" class="" checked />
+														<label for="currnt-data-y">
+															Yes
+														</label>
+														<input id="currnt-data-n" type="radio" name="currnt" class="" />
+														<label for="currnt-data-n">
+															No
+														</label>
+													</div>
+													<div class="col-sm-4 ">
+														<input type="file" class="form-control" />
+													</div>
+												</div>
+											</div>
+											
+											
 										</div>
 										
 									</div>
