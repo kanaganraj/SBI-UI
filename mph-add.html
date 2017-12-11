@@ -65,7 +65,7 @@
                      <i class="glyphicon icon">
                      <img class="icon icons8-Dashboard" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABqklEQVQoU6VTXXISYRDsHhIr5EWOsN4AT+BSxAdYqSw34AbGE2Q9gXgC8QRZiwAPhmI9gdxAjrC+BEvYr1PfJovgX5Xl9zg13T3dMx/xH48/Y68Wi8bxt+JcQkygISAnkW5Oah/6rVa+338AHs8+hnB2ReArqEziilQAMRTwGOb6vc7zrCLYgT2QsoWAt9u6JcdrN6AscywCUDlkfpKXomtVBCXYj3p0676AeG/CMorao4p9NlsEW+c+G/DKEU0C55u6PfUWSvBkMh8ISAiLo6i13Pc1nsyXIPJt3eKjdRFSHBJIvEAJvp7cpL5BQNrrnqW+VtpwfAPiyaZeC6qwrqc3IwiNF9GZtwGMp/MMQgZzWeXH1wg8E/Cp122HD31DCDmI0NcOlGusJZ1Oa1UpQ5aALqkIyzWuC0/wQ7n0TFxS1ne2beyv4yA4FU2I73x4O88PjCuBo163ffGnoxtP50MK8ebUmru0dwHJFgCGm7q93r+me3J3CeDilz1XSvcJ2wiEfIA0rOQQ+IAgUOYGv72wisCrPLp1saBYZINSTjD9fmrpX2/7Xz/YHXLr4hBbv6KaAAAAAElFTkSuQmCC" width="15" height="15">
                      </i>
-                     <span>MPH Creation</span>
+                     <span>User Admin</span>
                      </a>
                   </li>
                   <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
@@ -73,7 +73,297 @@
                      <i class="margleftic glyphicon icon">
                      <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
                      </i>
-                     <span class="dispnone">TPR Creation</span>
+                     <span class="dispnone">MPH</span>
+                     </a>
+                  </li>
+               </ul>
+            </aside>
+            <!-- uiView:  -->
+            <div ui-view="" class="content-area hidemenu ng-scope" style="">
+               <div class="app-content-body fade-in-up req-stock ng-scope" data-ng-controller="salesorderListCtrl">
+                  <div class="panel panel-default ">
+                     <div class="panel-heading clearfix ">
+                        <h2>MPH Add</h2>
+                     </div>
+                  </div>
+                  <div class=" animated fadeInUp clearfix ">
+                     <div class="wrapper-md ">
+                        <div class="  clearfix add-form form-wrapper">
+                           <form name="create_customer_form" class="form-horizontal clearfix  ng-pristine ng-valid-maxlength ng-invalid ng-invalid-required ng-valid-angular-validator" >
+                              <div class="bg-white  ">
+                                 <div class="row wrapper-md">
+                                    <div class="col-sm-5 ">
+                                       <div class="row ">
+                                          <div class="col-sm-4  right ">
+                                             <label>Client (MPH) name:<em>*</em></label>
+                                          </div>
+                                          <div class="col-sm-8 bottommarginsm">
+                                             <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+                                          </div>
+                                          <div class="col-sm-4 topmarginsm right ">
+                                             <label>Website <em>*</em></label>
+                                          </div>
+                                          <div class="col-sm-8 bottommarginsm">
+                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" name="customerprefix" ng-model="customerAddModel.customerprefix" placeholder="Customer Prefix" maxlength="20" fname="create_customer_form">
+                                          </div>
+                                          <div class="col-sm-4 topmarginsm right ">
+                                             <label>State <em>*</em></label>
+                                          </div>
+                                          <div class="col-sm-8 bottommarginsm">
+                                             <select class="form-control">
+												<option>state 1</option>
+											 </select>
+                                          </div>
+                                          <div class="col-sm-4 topmarginsm right ">
+                                             <label>City <em>*</em></label>
+                                          </div>
+                                          <div class="col-sm-8 bottommarginsm">
+											<select class="form-control">
+												<option>City 1</option>
+											 </select>
+                                          </div>
+                                          
+                                       </div>
+                                       
+                                    </div>
+									
+									<div class="col-sm-5 ">
+										<div class="row ">
+											<div class="col-sm-4 topmarginsm right ">
+                                             <label>Address1: <em>*</em></label>
+											  </div>
+											  <div class="col-sm-8 bottommarginsm">
+												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Address1" maxlength="35" required="" fname="create_customer_form">
+											  </div>
+											  <div class="col-sm-4 topmarginsm right ">
+												 <label>Address2: <em>*</em></label>
+											  </div>
+											  <div class="col-sm-8 bottommarginsm">
+												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Address2" maxlength="35" required="" fname="create_customer_form">
+											  </div>
+											  <div class="col-sm-4 topmarginsm right ">
+												 <label>Address3: <em>*</em></label>
+											  </div>
+											  <div class="col-sm-8 bottommarginsm">
+												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Address3" maxlength="35" required="" fname="create_customer_form">
+											  </div>
+											  <div class="col-sm-4 topmarginsm right ">
+												 <label>Pin code: <em>*</em></label>
+											  </div>
+											  <div class="col-sm-8 bottommarginsm">
+												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Pin Code" maxlength="35" required="" fname="create_customer_form">
+											  </div>
+										</div>
+									</div>
+									
+									<div class="col-sm-5 ">
+										<div class="row ">
+											<div class="col-sm-4 toppaddingsm right ">
+												<label>Industry<em>*</em></label>
+											</div>
+											<div class="col-sm-8 ">
+												<select class="form-control">
+													<option>1</option>
+													<option>2</option>
+												</select>
+											</div>
+											<div class="col-sm-4 topmarginsm right ">
+												<label>Brief description about client and their business:</label>
+											</div>
+											<div class="col-sm-8 topmarginsm ">
+												<input type="text" class="form-control" />
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-12 ">
+										<hr class="topmarginsm bottommarginsm hr-set">
+										
+										<h2>Client POC Details</h2>
+										<div class="row ">
+										
+											<div class="col-sm-5 ">
+												<div class="row ">
+													<div class="col-sm-4 right ">
+														<label class="topmarginsm">Name</label>
+													</div>
+													<div class="col-sm-8">
+														<input type="text" class="form-control" />
+													</div>
+													<div class="col-sm-4 toppaddingsm right">
+														<label class="toppaddingsm ">Designation</label>
+													</div>
+													<div class="col-sm-8 topmarginsm">
+														<input type="text" class="form-control" />
+													</div>
+												</div>
+											</div>
+											<div class="col-sm-5 ">
+												<div class="row ">
+													<div class="col-sm-4 toppaddingsm right">
+														<label>Email ID</label>
+													</div>
+													<div class="col-sm-8  ">
+														<input type="text" class="form-control" />
+													</div>
+													<div class="col-sm-4 toppaddingsm right ">
+														<label class="toppaddingsm">Phone No:</label>
+													</div>
+													<div class="col-sm-8  topmarginsm ">
+														<input type="text" class="form-control" />
+													</div>
+												</div>
+											</div>
+										
+											
+										</div>
+									
+									</div>
+									
+									
+									
+                                 </div>
+                              </div>
+							
+							</form>
+							
+						
+                        </div>
+						
+						
+						
+                              <div class="row wrapper-md ">
+                                 <div class="form-group full_w btn_group">
+                                    <button type="submit" class="btn btn-sm btn-primary btn_grn" data-ng-disabled="isDataSavingProcess" data-ng-class="{&quot;btn-loader&quot;:isDataSavingProcess}" fname="create_customer_form">Submit</button>
+                                    <a type="reset" class="btn btn-sm btn-primary btn_orng" data-ng-disabled="isDataSavingProcess" ng-click="formReset()">Reset</a>
+                                 </div>
+                              </div>
+						
+						
+                     </div>
+                  </div>
+               </div>
+               <!-- ngIf: showdeletePopup -->
+               <!-- ngIf: showdeletePopup -->  
+            </div>
+         </div>
+      </div>
+      </div>
+      <!-- JavaScripts -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+      <script >
+         jQuery.noConflict();
+         
+         jQuery(document).ready(function(){
+         	jQuery('.menu-toggle').click(function(){
+         		jQuery('body').toggleClass(' menu-open');
+         	});
+         	
+			jQuery('.tpr-ed-tab li').click(function(){
+         		jQuery('.tab-expnd').hide();
+				
+				jQuery('.tpr-ed-tab li').removeClass(' active-tab');
+				
+				jQuery('.wrapper-md').animate({ //animate element that has scroll
+					scrollTop: 340 //for scrolling
+				}, 1000);
+				
+         	});
+			
+			jQuery('.tpr-ed-tab li.term').click(function(){
+         		jQuery('.term-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			jQuery('.tpr-ed-tab li.rider').click(function(){
+         		jQuery('.rider-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			jQuery('.tpr-ed-tab li.climexp').click(function(){
+         		jQuery('.claim-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			jQuery('.tpr-ed-tab li.currnt-ins').click(function(){
+         		jQuery('.curnt-ins-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			jQuery('.tpr-ed-tab li.enclos').click(function(){
+         		jQuery('.enclo-tab').show();
+				jQuery(this).addClass('active-tab');
+         	});
+			
+         
+         });
+         
+      </script>
+   </body>
+</html><!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>SBI Life</title>
+      <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+      <link rel="stylesheet" href="./assets/css/normalize.css" type="text/css" />
+      <link rel="stylesheet" href="./assets/css/glyphicon.css" type="text/css" />
+      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="./assets/css/app.css" type="text/css" />
+      <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+   </head>
+   <body id="app-layout" class="  ">
+      <div  class="app-header  ng-scope" style="">
+         <header class="hide-print  ng-scope">
+            <div class=" clearfix margtop">
+               <h1 id="logo" class=" h1hei">
+                  <img src="assets/images/sbi-logo.png">
+               </h1>
+               <div class="head-right clearfix navbar-header">
+                  <div class="col-sm-12">
+                     <div class="row">
+                        <a href="javascript:void(0)" class="btn menu-toggle no-shadow navbar-btn toppaddingsm " ng-click="expandHandler()">
+                        <img class="icon icons8-Outdent out ng-hide" ng-show="!appConfig.navMenuExpand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAApElEQVQ4T62T3Q2DMBCD7Q06Ahu0I7BJGaGdpB2BUcImdBIjo1C1EhEH5F7ykPMX30+ICkFJNwCvE6wnT4i/0joQSRcA14CjD8lRUuPzN989aQB0AUgimSQlAD3JftHsLidD7MTQGXQIQrKVZMAMOlSOIXYgyY7aOk4CDf1LWe1Jns49ABuK08l74tXfirG4J1vKyP3uxq5Bl1/8jrxYyHlUcTIBYixZiY5vdLgAAAAASUVORK5CYII=" width="17" height="17" style="">
+                        <img class="icon icons8-Indent in" ng-show="appConfig.navMenuExpand" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAARCAYAAAA7bUf6AAAArElEQVQ4T62T0Q3CMAxEnzdgBDaAEdgERiiTwAgdgQ1aNmCEMskhoxQVkaoOjaV85fxinx2jQpikPXBZwTrbiuRPah2IpA2wC1T0NLNhqku5uCdb4BSA9GbWj7oE6ID/PEmAG+DnUezJBNAAbkV5O5JawFtrJR3ekIAXX5JsJaUQ1/94kqZzDMDumen4tBofsZvjq78Uw+yeLGVG7ouNzUHHX3yNvDijaapU8gIb3Esxmzn/SwAAAABJRU5ErkJggg==" width="17" height="17" style="">
+                        </a>
+                        <div class="displaynone">
+                           <div class="col-sm-2 menuicon">
+                              <button class="navbar-toggle f-left" data-target=".dash" data-toggle="collapse" type="button">
+                              <i class="fa fa-bars"></i>
+                              </button>
+                           </div>
+                        </div>
+                        <div class="col-sm-10 f-right">
+                           <div class="username f-right ">
+                              <img class="icon icons8-User f-left " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+2T4REBMRCF36uAEuiADqgAFWiBCpwKaEEHpwI6oITTARWsWRMzJ5LbzNyEH+zfJO/bfftCZC5m1sePAESkB2ADYOAsPQNYkqwsi02LnPgJQNcTuwIYWpAUQAlgEul0T3LaNEUKQDvtREQqkv2cgAtJ3U+0UibIbpF2qKnxbbppqlovWWd3Sdp6MV1Y4vrWtMjKuXX+XYCI6OeaAxg5e56J0R+sezkC2JHUKAcrOoGIFABWlgXuvCC5Dt19A7iuD7WFJjIeE439aUKAptxbsJLkrH4pBBBLpfHnki+anwe06T5pyX+A78AdR5lMGQY/HL4AAAAASUVORK5CYII=" width="24" height="24">
+                              <div class="user-info f-left dispnone">
+                                 <p class="ng-binding">Hello kkraj@mail.me (superadmin)!</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </header>
+      </div>
+      <div class="app main-container   ng-scope" id="app" ui-view="" style="">
+         <div class="dashboard_details ng-scope">
+            <aside id="aside" class="app-aside hidden-xs bg-dark">
+               <ul class="nav">
+                  <li data-ng-class="{ 'active': 'dashboard' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.dashboard.is_view == true" class="" style="">
+                     <a data-ui-sref=" app.dashboard" class="auto" href="#/dashboard">
+                     <i class="margleftic glyphicon icon">
+                     <img class="icon icons8-Dashboard" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABqklEQVQoU6VTXXISYRDsHhIr5EWOsN4AT+BSxAdYqSw34AbGE2Q9gXgC8QRZiwAPhmI9gdxAjrC+BEvYr1PfJovgX5Xl9zg13T3dMx/xH48/Y68Wi8bxt+JcQkygISAnkW5Oah/6rVa+338AHs8+hnB2ReArqEziilQAMRTwGOb6vc7zrCLYgT2QsoWAt9u6JcdrN6AscywCUDlkfpKXomtVBCXYj3p0676AeG/CMorao4p9NlsEW+c+G/DKEU0C55u6PfUWSvBkMh8ISAiLo6i13Pc1nsyXIPJt3eKjdRFSHBJIvEAJvp7cpL5BQNrrnqW+VtpwfAPiyaZeC6qwrqc3IwiNF9GZtwGMp/MMQgZzWeXH1wg8E/Cp122HD31DCDmI0NcOlGusJZ1Oa1UpQ5aALqkIyzWuC0/wQ7n0TFxS1ne2beyv4yA4FU2I73x4O88PjCuBo163ffGnoxtP50MK8ebUmru0dwHJFgCGm7q93r+me3J3CeDilz1XSvcJ2wiEfIA0rOQQ+IAgUOYGv72wisCrPLp1saBYZINSTjD9fmrpX2/7Xz/YHXLr4hBbv6KaAAAAAElFTkSuQmCC" width="15" height="15">
+                     </i>
+                     <span class="dispnone">Dashboard</span>
+                     </a>
+                  </li>
+                  <li data-ng-class="{ 'active': 'taskManagement' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.taskManagement.is_view == true" class="ng-hide">
+                     <a data-ui-sref=" app.taskManagement" class="auto" href="#/taskManagementList">
+                     <i class="glyphicon icon">
+                     <img class="icon icons8-Dashboard" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABqklEQVQoU6VTXXISYRDsHhIr5EWOsN4AT+BSxAdYqSw34AbGE2Q9gXgC8QRZiwAPhmI9gdxAjrC+BEvYr1PfJovgX5Xl9zg13T3dMx/xH48/Y68Wi8bxt+JcQkygISAnkW5Oah/6rVa+338AHs8+hnB2ReArqEziilQAMRTwGOb6vc7zrCLYgT2QsoWAt9u6JcdrN6AscywCUDlkfpKXomtVBCXYj3p0676AeG/CMorao4p9NlsEW+c+G/DKEU0C55u6PfUWSvBkMh8ISAiLo6i13Pc1nsyXIPJt3eKjdRFSHBJIvEAJvp7cpL5BQNrrnqW+VtpwfAPiyaZeC6qwrqc3IwiNF9GZtwGMp/MMQgZzWeXH1wg8E/Cp122HD31DCDmI0NcOlGusJZ1Oa1UpQ5aALqkIyzWuC0/wQ7n0TFxS1ne2beyv4yA4FU2I73x4O88PjCuBo163ffGnoxtP50MK8ebUmru0dwHJFgCGm7q93r+me3J3CeDilz1XSvcJ2wiEfIA0rOQQ+IAgUOYGv72wisCrPLp1saBYZINSTjD9fmrpX2/7Xz/YHXLr4hBbv6KaAAAAAElFTkSuQmCC" width="15" height="15">
+                     </i>
+                     <span>User Admin</span>
                      </a>
                   </li>
                   <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
@@ -81,39 +371,7 @@
                      <i class="margleftic glyphicon icon">
                      <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
                      </i>
-                     <span class="dispnone">Member Data</span>
-                     </a>
-                  </li>
-                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
-                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
-                     <i class="margleftic glyphicon icon">
-                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
-                     </i>
-                     <span class="dispnone">Generate Output</span>
-                     </a>
-                  </li>
-                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
-                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
-                     <i class="margleftic glyphicon icon">
-                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
-                     </i>
-                     <span class="dispnone">Validate Output</span>
-                     </a>
-                  </li>
-                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
-                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
-                     <i class="margleftic glyphicon icon">
-                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
-                     </i>
-                     <span class="dispnone">BO Team Validation</span>
-                     </a>
-                  </li>
-                  <li data-ng-class="{ 'active': 'customer' == currentPage}" ui-scroll-to="app" data-ng-show="screenAccessDetail.customer.is_view == true" class="" style="">
-                     <a data-ui-sref=" app.customers" class="auto" href="#/customersList">
-                     <i class="margleftic glyphicon icon">
-                     <img class="icon icons8-MySpace" width="15" height="15" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAABfUlEQVQ4T51SMU7DQBCcuZDQ8oTwAvyE/ACLQI0LbFGmJK5cOZQukYOEqUmQnwAvILwAPwHKJOQWrZNDCUokYIuT7rQzOzN7xJY6CeOAlGMA9+N8UHajvk9hIJR3gtUoTxOFUY/TqN8TwKPwAGIzGHqjfJCdRnEikAkAf5wPAtcLK5PR7fXTEhzG5WiY+toMgffZsL3y5rqqJ4KeEqgC7T0LY08IX6cvwRdXHTEMVNLnrJXtNWcFiBeBHC6MJA3LZDHb75VF8t4N42zRsJmS12D/8qq9Z805rH1WOU6eSnfTLKVX+7RSuB7WwIXJCCRC6Xx7JyZqQd/n81bVbE6PAH48DFPNoC5qskZs5dj0/jhMC9egeQhQgaIBtSHsKKGSsA7J2icH3ra69Tc/SA4arWmm6f8ZrERO7b/Auh39C3R7W5fmftAuC0uwUe+b1Y36hRHcrfLcSPc7xF3gmnVVQuOPh2m93/XaOXmjKYqTbRZ+BVYLBN9+ThZBm5TXL/SB15Y+OEiDAAAAAElFTkSuQmCC">
-                     </i>
-                     <span class="dispnone">Quotation Generation</span>
+                     <span class="dispnone">MPH</span>
                      </a>
                   </li>
                </ul>
