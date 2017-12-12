@@ -35,16 +35,31 @@
                            </div>
                         </div>
                         <div class="col-sm-10 f-right">
-                           
-						   
-						   
 						   <div class="username f-right ">
-						   
-							
                               <img class="icon icons8-User f-left " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+2T4REBMRCF36uAEuiADqgAFWiBCpwKaEEHpwI6oITTARWsWRMzJ5LbzNyEH+zfJO/bfftCZC5m1sePAESkB2ADYOAsPQNYkqwsi02LnPgJQNcTuwIYWpAUQAlgEul0T3LaNEUKQDvtREQqkv2cgAtJ3U+0UibIbpF2qKnxbbppqlovWWd3Sdp6MV1Y4vrWtMjKuXX+XYCI6OeaAxg5e56J0R+sezkC2JHUKAcrOoGIFABWlgXuvCC5Dt19A7iuD7WFJjIeE439aUKAptxbsJLkrH4pBBBLpfHnki+anwe06T5pyX+A78AdR5lMGQY/HL4AAAAASUVORK5CYII=" width="24" height="24">
                               <div class="user-info f-left dispnone">
                                  <p class="ng-binding">Hello kkraj@mail.me (Sales Admin)!</p>
                               </div>
+							  <ul class="user-settings user-settings1">
+									<li>
+										<div class="col-sm-12 bottommargin toppadding">
+											<div class="col-sm-12 user-profile">
+												<strong class="ng-binding">SBI <br></strong>
+												<span class="ng-binding">KKraj@mail.com</span><br>
+												<a type="button" class="butn11 myacnt  topmarginsm" id="subbut" style="color:white">
+													My Account
+												</a>
+												<a type="button" class="butn11 change topmarginsm" style="color:white" id="subbut" data-ui-sref="app.changepassword" href="#/changepassword">
+													Change Password
+												</a>
+												<a type="button" class="butn11 change topmarginsm" style="color:white" id="subbut" data-ui-sref="app.changepassword" href="#/changepassword">
+													Logout
+												</a>
+												
+											</div>
+										</div>
+									</li>
+								</ul>
                            </div>
 						   
 							<a href="tpr-list.html" class="home-ico " >
@@ -111,7 +126,7 @@
                                           </div>
                                           <div class="col-sm-3 bottommarginsm">
                                              <input type="text" class="form-control "
-											 name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" 
+											 name="customerno" ng-model="customerAddModel.customerno"  
 											 maxlength="20" value="Sampoorn Suraksha" readonly
 											 validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
                                           </div>
@@ -119,7 +134,7 @@
                                              <label>TPR Name <em>*</em></label>
                                           </div>
                                           <div class="col-sm-3 bottommarginsm">
-                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" name="customerprefix" ng-model="customerAddModel.customerprefix" placeholder="Customer Prefix" maxlength="20" fname="create_customer_form">
+                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" name="customerprefix" ng-model="customerAddModel.customerprefix" maxlength="20" fname="create_customer_form">
                                           </div>
 										  <!--
                                           <div class="col-sm-1 topmarginxs  ">
@@ -148,7 +163,7 @@
 													 <label>Client Name</label>
 												  </div>
 												  <div class="col-sm-4 bottommarginsm">
-													<input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													<input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
 													<span class="glyphicon glyphicon-search box-search "></span>
 												  </div>
 												  
@@ -157,7 +172,7 @@
 													 <label>MPH ID</label>
 												  </div>
 												  <div class="col-sm-4 bottommarginsm">
-													 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
 												  </div>
 												  
 												</div>
@@ -170,20 +185,20 @@
 														 <label>City</label>
 													  </div>
 													  <div class="col-sm-2 bottommarginsm">
-														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
 													  </div>
 													  <div class="col-sm-1 topmarginxs  ">
 														 <label>Industry</label>
 													  </div>
 													  <div class="col-sm-2 bottommarginsm">
-														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
 													  </div>
 													  
 													  <div class="col-sm-2 topmarginxs  ">
 														 <label>Active Policy</label>
 													  </div>
-													  <div class="col-sm-3 bottommarginsm">
-														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													  <div class="col-sm-4 bottommarginsm">
+														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
 													  </div>
 													
 												</div>
@@ -248,7 +263,7 @@
 																	  
 																	</select>
 																</div>
-																<div class="col-sm-2  ">
+																<div class="col-sm-2 topmarginsm ">
 																	<label>Group Type: <em>*</em></label>
 																</div>
 																<div class="col-sm-4">
@@ -343,34 +358,57 @@
 													</h2>
 													
 													<div class="row ">
-														<div class="col-sm-6 ">
+														<div class="col-sm-12 ">
 															<div class="row ">
-															
-																<div class="col-sm-2  ">
-																	<label class="topmarginsm ">Type:<em>*</em></label>
+																<div class="col-sm-4">
+																	<div class="row ">
+																		<div class="col-sm-4  ">
+																			<label class="topmarginsm ">Type:<em>*</em></label>
+																		</div>
+																		<div class="col-sm-8 ">
+																			<select name="cars"  class="form-control">
+																			  <option value="volvo">Mandatory</option>
+																			  <option value="saab">Voluntary</option>
+																			</select>
+																		</div>
+																	</div>
 																</div>
-																<div class="col-sm-4 ">
-																	<select name="cars"  class="form-control">
-																	  <option value="volvo">Mandatory</option>
-																	  <option value="saab">Voluntary</option>
-																	</select>
+																
+																<div class="col-sm-4">
+																	<div class="row ">
+																		<div class="col-sm-4  " >
+																			<label class="">Participation Level:<em>*</em></label>
+																		</div>
+																		<div class="col-sm-8 ">
+																			<input type="text" class="form-control" />
+																		</div>
+																	</div>
 																</div>
-																<div class="col-sm-3  " >
-																	<label class="">Participation Level:<em>*</em></label>
+																
+																<div class="col-sm-4">
+																	<div class="row ">
+																		<div class="col-sm-4 ">
+																			<label class="topmarginsm ">Premium By:<em>*</em></label>
+																		</div>
+																		<div class="col-sm-8 ">
+																			<select name="cars"  class="form-control"  >
+																			  <option value="volvo">Employer</option>
+																			  <option value="saab">Employee</option>
+																			  <option value="saab">Both</option>
+																			</select>
+																			
+																		</div>
+																	</div>
 																</div>
-																<div class="col-sm-3 ">
-																	<input type="text" class="form-control" />
-																</div>
+																
 															
 																<div class="col-sm-12 toppadding bottommarginsm">
 																	<h5>Retirement Age Categories</h5>
 																</div>
-																<div class="col-sm-12  ">
+																<div class="col-sm-4  ">
 																	<div class="row ">
-																		<div class="col-sm-4  toppaddingsm ">
-																			
+																		<div class="col-sm-5  toppaddingsm ">
 																			<input type="radio" id="categ-1" name="categ" />
-																
 																			<label for="categ-1" class="">Category 1:<em>*</em></label>
 																		</div>
 																		<div class="col-sm-2 ">
@@ -384,7 +422,7 @@
 																		</div>
 																	</div>
 																	<div class="row toppaddingsm ">
-																		<div class="col-sm-4  toppaddingsm ">
+																		<div class="col-sm-5  toppaddingsm ">
 																			
 																		<input type="radio" id="categ-2" name="categ" />
 																
@@ -404,40 +442,37 @@
 															
 															</div>
 														</div>
-														<div class="col-sm-6 ">
-															<div class="row ">
-																<div class="col-sm-4   ">
-																	<label class="topmarginsm ">Premium By:<em>*</em></label>
-																</div>
-																<div class="col-sm-8 ">
-																	<select name="cars"  class="form-control"  >
-																	  <option value="volvo">Employer</option>
-																	  <option value="saab">Employee</option>
-																	  <option value="saab">Both</option>
-																	</select>
-																	
-																</div>
-															</div>
-														</div>
+														
 														<div class="col-sm-12 ">&nbsp;</div>
 														<div class="col-sm-12 ">
 															
 															<h5 class="toppadding bottommarginsm">Coverage</h5>
-															<div class="col-sm-3  toppaddingsm ">
-																<label class="">Total no of members in the Group: </label>
+															
+															<div class="row ">
+																<div class="col-sm-4 ">
+																	<div class="col-sm-4 ">
+																		<label class="">Total no of members in the Group: </label>
+																	</div>
+																	<div class="col-sm-8 ">
+																		<input type="text" class="form-control" />
+																	</div>
+																	
+																</div>
+																<div class="col-sm-4 ">
+																	<div class="col-sm-4  ">
+																		<label class="">No of Members to be covered: </label>
+																	</div>
+																	<div class="col-sm-8 ">
+																		<input type="text" class="form-control" />
+																	</div>
+																</div>
 															</div>
-															<div class="col-sm-2 ">
-																<input type="text" class="form-control" />
-															</div>
-															<div class="col-sm-3  toppaddingsm ">
-																<label class="">No of Members to be covered: </label>
-															</div>
-															<div class="col-sm-2  ">
-																<input type="text" class="form-control" />
-															</div>
+															
+															
+															
 														</div>
 														<div class="col-sm-12 ">&nbsp;</div>
-														<div class="col-sm-6 ">
+														<div class="col-sm-5 ">
 														
 															<h5 class="toppadding bottommarginsm">Death Benefits</h5>
 															
@@ -482,13 +517,16 @@
 															</label>
 															<br/>
 														</div>
+														<div style="width:3%; float: left; height: 300px;">
+															
+														</div>
 														<div class="col-sm-6 ">
 															<br/><br/>
 															<label>
 																Comments
 															</label>
 															<br/>
-															<textarea class="form-control" placeholder="Any Comments"></textarea>
+															<textarea class="form-control" ></textarea>
 															
 														</div>
 														
@@ -500,30 +538,47 @@
 													</h2>
 													
 													<div class="row ">
-														<div class="col-sm-2 ">
-															<label>Frequency of Premium payment</label>
+													
+														<div class="col-sm-4 ">
+															<div class="row ">
+																<div class="col-sm-4 ">
+																	<label>Frequency of Premium payment</label>
+																</div>
+																<div class="col-sm-8 ">
+																	<select name="cars"  class="form-control">
+																	  <option value="volvo">Montlhy</option>
+																	  <option value="saab">Quarterly</option>
+																	  <option value="saab">Half Yearly</option>
+																	  <option value="saab">Yearly</option>
+																	</select>
+																</div>
+															</div>
 														</div>
-														<div class="col-sm-2 ">
-															<select name="cars"  class="form-control">
-															  <option value="volvo">Montlhy</option>
-															  <option value="saab">Quarterly</option>
-															  <option value="saab">Half Yearly</option>
-															  <option value="saab">Yearly</option>
-															</select>
+														<div class="col-sm-4 ">
+															<div class="row ">
+																<div class="col-sm-4 ">
+																	<label>Tentative data of commencement or Renewal*</label>
+																</div>
+																<div class="col-sm-8 ">
+																	<input type="text" class="form-control" />
+																</div>
+															</div>
 														</div>
+														<div class="col-sm-4 ">
+															<div class="row ">
+																<div class="col-sm-4 ">
+																	<label>Date of submission*</label>
+																</div>
+																<div class="col-sm-8 ">
+																	<input type="text" class="form-control" />
+																</div>
+															</div>
+														</div>
+													
 														
-														<div class="col-sm-2 ">
-															<label>Tentative data of commencement or Renewal*</label>
-														</div>
-														<div class="col-sm-2 ">
-															<input type="text" class="form-control" />
-														</div>
-														<div class="col-sm-2 ">
-															<label>Date of submission*</label>
-														</div>
-														<div class="col-sm-2 ">
-															<input type="text" class="form-control" />
-														</div>
+														
+														
+														
 														
 													</div>
 													

@@ -41,6 +41,26 @@
                               <div class="user-info f-left dispnone">
                                  <p class="ng-binding">Hello kkraj@mail.me (Sales Admin)!</p>
                               </div>
+							  <ul class="user-settings user-settings1">
+									<li>
+										<div class="col-sm-12 bottommargin toppadding">
+											<div class="col-sm-12 user-profile">
+												<strong class="ng-binding">SBI <br></strong>
+												<span class="ng-binding">KKraj@mail.com</span><br>
+												<a type="button" class="butn11 myacnt  topmarginsm" id="subbut" style="color:white">
+													My Account
+												</a>
+												<a type="button" class="butn11 change topmarginsm" style="color:white" id="subbut" data-ui-sref="app.changepassword" href="#/changepassword">
+													Change Password
+												</a>
+												<a type="button" class="butn11 change topmarginsm" style="color:white" id="subbut" data-ui-sref="app.changepassword" href="#/changepassword">
+													Logout
+												</a>
+												
+											</div>
+										</div>
+									</li>
+								</ul>
 							</div>
 						   
 							<a href="tpr-list.html" class="home-ico " >
@@ -103,13 +123,13 @@
                                              <label>Client (MPH) name:<em>*</em></label>
                                           </div>
                                           <div class="col-sm-8 bottommarginsm">
-                                             <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+                                             <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
                                           </div>
                                           <div class="col-sm-4 topmarginsm  ">
                                              <label>Website <em>*</em></label>
                                           </div>
                                           <div class="col-sm-8 bottommarginsm">
-                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" name="customerprefix" ng-model="customerAddModel.customerprefix" placeholder="Customer Prefix" maxlength="20" fname="create_customer_form">
+                                             <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" name="customerprefix" ng-model="customerAddModel.customerprefix" maxlength="20" fname="create_customer_form">
                                           </div>
                                           <div class="col-sm-4 topmarginsm  ">
                                              <label>State <em>*</em></label>
@@ -138,25 +158,25 @@
                                              <label>Address1: <em>*</em></label>
 											  </div>
 											  <div class="col-sm-8 bottommarginsm">
-												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Address1" maxlength="35" required="" fname="create_customer_form">
+												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" maxlength="35" required="" fname="create_customer_form">
 											  </div>
 											  <div class="col-sm-4 topmarginsm  ">
 												 <label>Address2: <em>*</em></label>
 											  </div>
 											  <div class="col-sm-8 bottommarginsm">
-												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Address2" maxlength="35" required="" fname="create_customer_form">
+												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" maxlength="35" required="" fname="create_customer_form">
 											  </div>
 											  <div class="col-sm-4 topmarginsm  ">
 												 <label>Address3: <em>*</em></label>
 											  </div>
 											  <div class="col-sm-8 bottommarginsm">
-												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Address3" maxlength="35" required="" fname="create_customer_form">
+												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" maxlength="35" required="" fname="create_customer_form">
 											  </div>
 											  <div class="col-sm-4 topmarginsm  ">
 												 <label>Pin code: <em>*</em></label>
 											  </div>
 											  <div class="col-sm-8 bottommarginsm">
-												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Pin Code" maxlength="35" required="" fname="create_customer_form">
+												 <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" maxlength="35" required="" fname="create_customer_form">
 											  </div>
 										</div>
 									</div>
