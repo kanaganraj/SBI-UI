@@ -36,6 +36,11 @@
                         </div>
                         <div class="col-sm-10 f-right">
                            <div class="username f-right ">
+						   
+							<a href="tpr-list.html" style="float: left;">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFLSURBVEhL5ZI/S0JRGIdvhRASGkhT1iYINrk0FVKji4uLS01BqyA4N4hrH8LFT9DS1gcIhwYXkYagKSSkCO7tOee+1wvXW3rsKEgPPJzb+++HkGOC67opz/MucUtKdiHgCPsEeLz3uCctO3Cwhu8qIIC/n/FY+meU2rwtzOqleWExwdKtvhoDvQ+8xo6UVK0m67NheB8fZPdXmJv8yrlDGDzFF9kzYmYIMxsM1fHLXzGH3Yacm4b+Dnb15B8gRHHD56ac9qGQp/GkpyzBvTvM6AA+TvBVetbgpvrPG+CBCslhQXrW4GaPp4S7+tcodMciKkROh0jPGkYhDI95rn6wibGY/pI33MZ2RBVwiLEsEpL2P0M4MuRZ8xAOjJYawvInXiw1JOCfh1B0pR9l0ZBHOR1C8ZxeNcYKJiK1KvNl3mS0Hki/KKdXgeN8A1GptutEEjDmAAAAAElFTkSuQmCC">
+							</a>
+						   
                               <img class="icon icons8-User f-left " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+2T4REBMRCF36uAEuiADqgAFWiBCpwKaEEHpwI6oITTARWsWRMzJ5LbzNyEH+zfJO/bfftCZC5m1sePAESkB2ADYOAsPQNYkqwsi02LnPgJQNcTuwIYWpAUQAlgEul0T3LaNEUKQDvtREQqkv2cgAtJ3U+0UibIbpF2qKnxbbppqlovWWd3Sdp6MV1Y4vrWtMjKuXX+XYCI6OeaAxg5e56J0R+sezkC2JHUKAcrOoGIFABWlgXuvCC5Dt19A7iuD7WFJjIeE439aUKAptxbsJLkrH4pBBBLpfHnki+anwe06T5pyX+A78AdR5lMGQY/HL4AAAAASUVORK5CYII=" width="24" height="24">
                               <div class="user-info f-left dispnone">
                                  <p class="ng-binding">Hello kkraj@mail.me (superadmin)!</p>
@@ -82,12 +87,13 @@
             <!-- uiView:  -->
             <div ui-view="" class="content-area hidemenu ng-scope" style="">
                <div class="app-content-body fade-in-up req-stock  ng-scope" data-ng-controller="salesorderListCtrl">
-                  <div class="panel panel-default ">
+                  <!-- 
+				  <div class="panel panel-default ">
                      <div class="panel-heading clearfix ">
                         <h2>TPR Add</h2>
                      </div>
-                  </div>
-                  <div class=" animated fadeInUp clearfix ">
+                  </div> -->
+                  <div class=" animated fadeInUp clearfix " style="margin-top: 0;">
                      <div class="wrapper-md ">
                         <div class="  clearfix add-form form-wrapper">
                            <form name="create_customer_form" angular-validator-submit="createcustomer()" class="form-horizontal clearfix  ng-pristine ng-valid-maxlength ng-invalid ng-invalid-required ng-valid-angular-validator" novalidate="" angular-validator="">
@@ -99,7 +105,10 @@
                                              <label>Product<em>*</em></label>
                                           </div>
                                           <div class="col-sm-3 bottommarginsm">
-                                             <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+                                             <input type="text" class="form-control "
+											 name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" 
+											 maxlength="20" value="Sampoorn Suraksha" readonly
+											 validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
                                           </div>
                                           <div class="col-sm-1 topmarginxs right ">
                                              <label>TPR Name <em>*</em></label>
@@ -107,13 +116,14 @@
                                           <div class="col-sm-3 bottommarginsm">
                                              <input type="text" class="form-control ng-pristine ng-untouched ng-valid ng-valid-maxlength" name="customerprefix" ng-model="customerAddModel.customerprefix" placeholder="Customer Prefix" maxlength="20" fname="create_customer_form">
                                           </div>
+										  <!--
                                           <div class="col-sm-1 topmarginxs right ">
                                              <label>QRF ID*</label>
                                           </div>
                                           <div class="col-sm-3 bottommarginsm">
                                              <input type="text" class="form-control ng-pristine ng-untouched ng-invalid ng-invalid-required ng-valid-maxlength" name="customername" ng-model="customerAddModel.name" placeholder="Full Name" maxlength="35" required="" fname="create_customer_form">
                                           </div>
-                                          
+                                          -->
 										  
 										  
                                        </div>
@@ -124,17 +134,27 @@
 									
 									<div class="col-sm-10 topmarginsm ">
 										<div class="row ">
-											<div class="col-sm-2 ">
+											<!-- <div class="col-sm-2 ">
 												<h2>MPH Details</h2>
-											</div>
-											<div class="col-sm-6 ">
+											</div> -->
+											<div class="col-sm-12 ">
 												<div class="row ">
-													<div class="col-sm-5 topmarginxs right ">
-													 <label>MPH (Client) Name</label>
+													<div class="col-sm-2 topmarginxs right ">
+													 <label>Client Name</label>
 												  </div>
-												  <div class="col-sm-7 bottommarginsm">
-													 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+												  <div class="col-sm-4 bottommarginsm">
+													<input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													<span class="glyphicon glyphicon-search box-search "></span>
 												  </div>
+												  
+												  
+												  <div class="col-sm-2 topmarginxs right ">
+													 <label>MPH ID</label>
+												  </div>
+												  <div class="col-sm-4 bottommarginsm">
+													 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+												  </div>
+												  
 												</div>
 											</div>
 											<div class="col-sm-12 ">
@@ -142,29 +162,23 @@
 												<div class="row ">
 												
 													  <div class="col-sm-1 topmarginxs right ">
-														 <label>MPH ID</label>
-													  </div>
-													  <div class="col-sm-2 bottommarginsm">
-														 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
-													  </div>
-													  <div class="col-sm-1 topmarginxs right ">
 														 <label>City</label>
 													  </div>
 													  <div class="col-sm-2 bottommarginsm">
-														 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
 													  </div>
 													  <div class="col-sm-1 topmarginxs right ">
 														 <label>Industry</label>
 													  </div>
 													  <div class="col-sm-2 bottommarginsm">
-														 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
 													  </div>
 													  
-													  <div class="col-sm-1 topmarginxs right ">
+													  <div class="col-sm-2 topmarginxs right ">
 														 <label>Active Policy</label>
 													  </div>
-													  <div class="col-sm-2 bottommarginsm">
-														 <input type="text" class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
+													  <div class="col-sm-3 bottommarginsm">
+														 <input type="text" readonly class="form-control " name="customerno" ng-model="customerAddModel.customerno" placeholder="Customer No" maxlength="20" validator="validationFactory.hasRequired(customerAddModel.customerno) == false ||validationFactory.isPositiveNumber(customerAddModel.customerno) === true" fname="create_customer_form">
 													  </div>
 													
 												</div>
@@ -173,8 +187,8 @@
                                           
                                         </div>
 									</div>
-									<div class="col-sm-2 topmargin  ">
-										<a class="add_button add-dash" href="mph-add.html">
+									<div class="col-sm-2 topmargin toppadding ">
+										<a class="add_button add-dash topmargin" href="mph-add.html">
 											New MPH
 										</a>
 									</div>
@@ -226,10 +240,10 @@
 																	  <option value="volvo">New Business</option>
 																	  <option value="saab">Renewal</option>
 																	  <option value="opel">Revival</option>
-																	  <option value="audi">Audi</option>
+																	  
 																	</select>
 																</div>
-																<div class="col-sm-1 right ">
+																<div class="col-sm-2 right ">
 																	<label>Group Type: <em>*</em></label>
 																</div>
 																<div class="col-sm-4">
@@ -242,7 +256,7 @@
 															</div>
 														</div>
 														<div class="col-sm-8 ">
-															<h5>Renewal Details</h5>
+															<h5 class="topmarginsm">Renewal Details</h5>
 															
 															<div class="row ">
 															
@@ -307,7 +321,7 @@
 																</div>
 																<div class=" col-sm-8 ">
 																	<select name="cars"  class="form-control">
-																	  <option value="volvo">Banc assurance</option>
+																	  <option value="volvo">Bancassurance</option>
 																	  <option value="saab">Corporate Solutions</option>
 																	  <option value="opel">Institutional Alliance</option>
 																	  <option value="audi">Micro Insurance</option>

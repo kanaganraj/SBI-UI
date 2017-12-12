@@ -15,12 +15,16 @@ and open the template in the editor.
 
 .delet-popup {position: fixed;}
 
-.model_popup .close { position: absolute;     top: -13px;
-                      right: -13px;
-                      background: #FFF;
-                      width: 30px;
-                      height: 30px;
-                      border-radius: 100%;    padding: 7px 0 0 8px; border: 1px solid #E8E8E8;}
+.model_popup .close { position: absolute;
+    top: -13px;
+    right: -13px;
+    background: #FFF;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    padding: 3px 0 0 5px;
+    border: 1px solid #E8E8E8;
+    opacity: 0.9;}
 
 .centerMarker{
     position:absolute;

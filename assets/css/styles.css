@@ -813,7 +813,7 @@ input[type="checkbox"]{vertical-align: middle}
     padding: 10px 25px;
 }
 .add_button {
-    display: inline-block;
+    display: inline-block; float: right;
     font-weight: normal;
     background-color: #03a9f3;     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
     padding: 8px 15px 5px; margin-left: 10px;
@@ -2987,9 +2987,15 @@ table > tr > td.child
 
 .opti-wrap {border: 1px solid #efefef; margin: 0 0px; padding: 10px;}
 
+.box-search {
+    top: -26px !important;
+    position: relative;
+    right: 17px;
+    float: right;
+}
 
-
-
+.model_overlay {display: none;}
+.model_popup {display: none;}
 
 
 

@@ -2065,7 +2065,7 @@ back-header .head-right {
     z-index: 1001;
     background: rgba(255,255,255,.7);
 }
-/*bhavani*/
+
 .imgalign
 {
     width: 330px;
@@ -2078,7 +2078,7 @@ back-header .head-right {
 }
 .imgalign img
 {
-	width: 60%;
+	width: 60%;    margin-left: -15px;
 }
 .imgcenter{
     width: 101px;

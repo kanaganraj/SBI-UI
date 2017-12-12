@@ -11,6 +11,7 @@
       <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="./assets/css/app.css" type="text/css" />
       <link rel="stylesheet" href="./assets/css/styles.css" type="text/css" />
+      <link rel="stylesheet" href="./assets/css/component.css" type="text/css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
    </head>
    <body id="app-layout" class="  ">
@@ -38,6 +39,12 @@
                         </div>
                         <div class="col-sm-10 f-right">
                            <div class="username f-right ">
+						   
+						   
+							<a href="tpr-list.html" style="float: left;">
+								<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFLSURBVEhL5ZI/S0JRGIdvhRASGkhT1iYINrk0FVKji4uLS01BqyA4N4hrH8LFT9DS1gcIhwYXkYagKSSkCO7tOee+1wvXW3rsKEgPPJzb+++HkGOC67opz/MucUtKdiHgCPsEeLz3uCctO3Cwhu8qIIC/n/FY+meU2rwtzOqleWExwdKtvhoDvQ+8xo6UVK0m67NheB8fZPdXmJv8yrlDGDzFF9kzYmYIMxsM1fHLXzGH3Yacm4b+Dnb15B8gRHHD56ac9qGQp/GkpyzBvTvM6AA+TvBVetbgpvrPG+CBCslhQXrW4GaPp4S7+tcodMciKkROh0jPGkYhDI95rn6wibGY/pI33MZ2RBVwiLEsEpL2P0M4MuRZ8xAOjJYawvInXiw1JOCfh1B0pR9l0ZBHOR1C8ZxeNcYKJiK1KvNl3mS0Hki/KKdXgeN8A1GptutEEjDmAAAAAElFTkSuQmCC">
+							</a>
+						   
                               <img class="icon icons8-User f-left " src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAA70lEQVRIS+2T4REBMRCF36uAEuiADqgAFWiBCpwKaEEHpwI6oITTARWsWRMzJ5LbzNyEH+zfJO/bfftCZC5m1sePAESkB2ADYOAsPQNYkqwsi02LnPgJQNcTuwIYWpAUQAlgEul0T3LaNEUKQDvtREQqkv2cgAtJ3U+0UibIbpF2qKnxbbppqlovWWd3Sdp6MV1Y4vrWtMjKuXX+XYCI6OeaAxg5e56J0R+sezkC2JHUKAcrOoGIFABWlgXuvCC5Dt19A7iuD7WFJjIeE439aUKAptxbsJLkrH4pBBBLpfHnki+anwe06T5pyX+A78AdR5lMGQY/HL4AAAAASUVORK5CYII=" width="24" height="24">
                               <div class="user-info f-left dispnone">
                                  <p class="ng-binding">Hello kkraj@mail.me (superadmin)!</p>
@@ -89,7 +96,7 @@
 			   <div class="app-content-body fade-in-up req-stock  ng-scope" data-ng-controller="salesorderListCtrl">
                   <div class="panel panel-default ">
                      <div class="panel-heading clearfix ">
-                        <h2>TPR</h2>
+                        <!--  h2>TPR</h2  -->
                         <a data-ui-sref="app.salesorderAdd" ui-scroll-to="app" class="add_button add-dash" href="tpr-add.html">New TPR</a>
                         <a href="javascript:void(0)" data-ng-click="refreshScreen()" class="add_button add-dash">Refresh</a>
                      </div>
@@ -126,15 +133,16 @@
                               <div class="sea">
                                  <select class="form-control  ng-pristine ng-untouched ng-valid" ng-model="searchFilter.status" data-ng-change="initTableFilter()" name="statusdropdown" fname="quote_form">
                                     <option value="">All Status</option>
-                                    <option value="paid">Paid</option>
-                                    <option value="unpaid">Unpaid</option>
-                                    <option value="partiallyPaid">Partially Paid</option>
+                                    <option value="paid">Pending with BO</option>
+                                    <option value="unpaid">Pending with Actuarial</option>
+                                    <option value="partiallyPaid">Pending with Sales</option>
+									<option value="partiallyPaid">Submitted to User</option>
                                  </select>
                               </div>
                            </div>
                         </form>
                         <div class="table-responsive ">
-                           <table class="table no-link table-striped b-t  dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+                           <table class="main-table table no-link table-striped b-t  dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
                               <thead>
                                  <tr role="row">
                                     <th style="width:110px;" rowspan="1" colspan="1">
@@ -168,9 +176,7 @@
                                     <th style="width:120px;" rowspan="1" colspan="1">
                                        Status
                                     </th>
-                                    <th style="width:180px;" rowspan="1" colspan="1">
-                                       Action
-                                    </th>
+									
                                  </tr>
                               </thead>
                               <tbody>
@@ -186,38 +192,38 @@
                                  <!-- ngRepeat: invoice in invoiceModel.list -->
                                  <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        001
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        L&T
                                        </a>
                                     </td>
 
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
 											New Business
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                        0024 - Raju
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        05-10-2017
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Link
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Link
 										  </span>
@@ -225,15 +231,15 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
-											Generate / Download
+											 Download
 										  </span>
                                           
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Download
 										  </span>
@@ -241,59 +247,49 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Pending BO
 										  </span>
                                        </a>
                                     </td>
-                                    <td>
-                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
-                                       </a>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
-                                       </a>
-                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
-                                       
-                                       </a>                                
-                                    </td>
+									
                                  </tr>
                                  
 								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        022
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Tata Steel
                                        </a>
                                     </td>
 
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
 											New Business
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                        0024 - Raju
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        05-10-2017
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Link
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Link
 										  </span>
@@ -301,15 +297,15 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
-											Generate / Download
+											 Download
 										  </span>
                                           
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Download
 										  </span>
@@ -317,59 +313,49 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Pending BO
 										  </span>
                                        </a>
                                     </td>
-                                    <td>
-                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
-                                       </a>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
-                                       </a>
-                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
-                                       
-                                       </a>                                
-                                    </td>
+									
                                  </tr>
                                  
 								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        003
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Welcome One
                                        </a>
                                     </td>
 
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
 											New Business
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                        0024 - Raju
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        05-10-2017
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Link
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Link
 										  </span>
@@ -377,15 +363,15 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
-											Generate / Download
+											 Download
 										  </span>
                                           
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Download
 										  </span>
@@ -393,59 +379,49 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Pending BO
 										  </span>
                                        </a>
                                     </td>
-                                    <td>
-                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
-                                       </a>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
-                                       </a>
-                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
-                                       
-                                       </a>                                
-                                    </td>
+									
                                  </tr>
                                  
 								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        004
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Tata Services
                                        </a>
                                     </td>
 
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
 											New Business
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                        0024 - Raju
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        05-10-2017
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Link
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Link
 										  </span>
@@ -453,15 +429,15 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
-											Generate / Download
+											 Download
 										  </span>
                                           
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Download
 										  </span>
@@ -469,59 +445,49 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Pending BO
 										  </span>
                                        </a>
                                     </td>
-                                    <td>
-                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
-                                       </a>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
-                                       </a>
-                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
-                                       
-                                       </a>                                
-                                    </td>
+									
                                  </tr>
                                  
 								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        005
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        MRF
                                        </a>
                                     </td>
 
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
 											New Business
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                        0024 - Raju
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        05-10-2017
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Link
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Link
 										  </span>
@@ -529,15 +495,15 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
-											Generate / Download
+											 Download
 										  </span>
                                           
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Download
 										  </span>
@@ -545,59 +511,49 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Pending BO
 										  </span>
                                        </a>
                                     </td>
-                                    <td>
-                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
-                                       </a>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
-                                       </a>
-                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
-                                       
-                                       </a>                                
-                                    </td>
+									
                                  </tr>
                                  
 								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        006
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        IIT
                                        </a>
                                     </td>
 
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
 											New Business
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                        0024 - Raju
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        05-10-2017
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
                                        Link
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Link
 										  </span>
@@ -605,15 +561,15 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
-											Generate / Download
+											 Download
 										  </span>
                                           
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Download
 										  </span>
@@ -621,23 +577,13 @@
                                        </a>
                                     </td>
                                     <td>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="tpr-edit.html">
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
                                           <span class="paid color-green,parsleypaid color-blue,unpaid color-red ng-binding">
 											Pending BO
 										  </span>
                                        </a>
                                     </td>
-                                    <td>
-                                       <a data-ui-sref="app.salesorderView({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Visible" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABbElEQVQ4T9VUwW3CQBCcOaNIkTBJCXQQSjAVxPlg+LkEOsCpADqIeYH5xFSAS6AEl0AwUpQI30Z3wUAgUhSJD/c46fZ2Z3dm94640OKFcHBNQMnaV+ADRJqWPplrkSW6jflvcpxRc2abULQegBxrjQw9N7OBk8JThA+IT6pBGdTHx4AHoNmm5YiMBMgIeGXgejA2LUMQq5J8Rqe+dJIi2/uQfWOzBZvNVAGRsNS1ENg2lYKnAzdypkUK4tFmFszLruurpIhspajljtrGIOOyU48JqwV8feP28cSVpfAXEJnaSl7lXn0WIw2kB6CgEVac1bRY6q7bqhyNvUq0vzNGA/RRDDUxP6fWu82t4KI9fQRu4lSyjk12BI0Uk/emoVZCRuZ8JjbAF9sRQ1kYgVjsNGprSmSC1HTTJ8UvT8U+bmMlvAALTSMq377v5U4JPALtSuDf2386ZTvRgd1AgvmPuTrxv6a39s//5WLUvgCSucTptEiCZQAAAABJRU5ErkJggg==" width="18" height="18">
-                                       </a>
-                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" href="tpr-edit.html">
-                                       <img class="icon icons8-Edit" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAABFElEQVQ4T63UwU3DQBAF0P+DNmcf4jOU4BJcgjvAWwFwNkhGGHGlg00HcSogHWAqAK4xEuHKBgaZYEhiA+vIe169mf2aWaKnw54cdII8k3rDgToSkZDkbH6YnNeNOEMVoqhuIEKA14AcE8znOkkrzAmqEQKBAOMyTrRvLmMAcamT0Ala78RiL1J4y0HeAggomDp1tIksw4VOF565Ohjy/V5E7kp9GvybUTvyk5PFCv4T6oq0ZrQL0oB2RRqQb7KCgPeKZbAK9vdMtjfie45G5iIkBvnnBWJixZ7UA7gdbNtarUFZNamRhY0U1AOJZxF5cUE2nuabbAxi/6taAMGjK9KEAAhQAFI86bNZl5/BaddcwN6gD8jtvxMIXPP6AAAAAElFTkSuQmCC" width="18" height="18">
-                                       </a>
-                                       <a class="chel-edit-add add-dash" data-ng-click="showPopup(invoice.id)">
-                                       
-                                       </a>                                
-                                    </td>
+									
                                  </tr>
                                  
 								 
@@ -679,7 +625,164 @@
                   </div>
                   <!-- ngIf: showdeletePopup -->
                   <!-- ngIf: showdeletePopup -->  
-               </div>
+				</div>
+			   <div class="model_overlay ">
+				
+			   </div>
+				<div class="model_popup">
+					<a href="javascript:void(0)" ng-click="closeCustomerPopup();formReset();" class="glyphicon glyphicon-remove close"></a>
+					<table class="table no-link table-striped b-t  dataTable no-footer" id="DataTables_Table_0" role="grid" aria-describedby="DataTables_Table_0_info" style="width: 100%;">
+                              <thead>
+                                 <tr role="row">
+                                    <th style="width:90px;" rowspan="1" colspan="1">
+                                       TPR ID
+                                    </th>
+                                    <th style="width:160px;" rowspan="1" colspan="1">
+                                       Status
+                                    </th>                                                 
+                                    <th style="width:150px;" class=" " rowspan="1" colspan="1">
+                                       User ID
+                                    </th>
+                                    <th style="width:270px;" class=" " rowspan="1" colspan="1">
+                                       Date / Time
+                                    </th>
+                                    <th style="width:200px;" rowspan="1" colspan="1">
+                                       Remarks
+                                    </th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+							  <!--
+                                 <tr data-ng-show="invoiceModel.isLoadingProgress" class="ng-hide">
+                                    <td colspan="8" class="text-left" style="padding: 0;">
+                                       <p class="loader-icon">
+                                          <img alt="loader" src="../img/loading.gif">
+                                       </p>
+                                    </td>
+                                 </tr>-->
+                                 <!-- ngIf: invoiceModel.list.length == 0 -->
+                                 <!-- ngRepeat: invoice in invoiceModel.list -->
+                                 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       002
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       Creation
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
+											E12345
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
+											30-08-2017 : 08.30
+
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       Created TPR
+                                       </a>
+                                    </td>
+                                 </tr>
+								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       002
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       Creation
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
+											E12345
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
+											30-08-2017 : 08.30
+
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       Created TPR
+                                       </a>
+                                    </td>
+                                 </tr>
+								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       002
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       Creation
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
+											E12345
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
+											30-08-2017 : 08.30
+
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       Created TPR
+                                       </a>
+                                    </td>
+                                 </tr>
+								 <tr data-ng-repeat="invoice in invoiceModel.list" class="ng-scope">
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       002
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       Creation
+                                       </a>
+                                    </td>
+
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
+											E12345
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" class="  ng-binding" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" href="javascript:void(0);">
+											30-08-2017 : 08.30
+
+                                       </a>
+                                    </td>
+                                    <td>
+                                       <a data-ui-sref="app.salesorderEdit({id: '9'})" ui-scroll-to="app" style="display:block; width:100% ;height: 100%" class="ng-binding" href="javascript:void(0);">
+                                       Created TPR
+                                       </a>
+                                    </td>
+                                 </tr>
+                           </tbody>
+							</table>
+				</div>
+			   
+			   
             </div>
          </div>
       </div>
@@ -694,7 +797,21 @@
 			jQuery('.menu-toggle').click(function(){
 				jQuery('body').toggleClass(' menu-open');
 			});
+				
+			jQuery('.main-table td').click(function(){
+				jQuery('.model_overlay').show();
+				jQuery('.model_popup').show();
+			});	
 			
+			jQuery('.model_popup .close').click(function(){
+				jQuery('.model_overlay').hide();
+				jQuery('.model_popup').hide();
+			});	
+			
+				
+				 
+				
+				
 		
 		});
 		
