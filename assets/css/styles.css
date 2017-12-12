@@ -2997,7 +2997,8 @@ table > tr > td.child
 .model_overlay {display: none;}
 .model_popup {display: none;}
 
-
+.home-ico { float: right;display: block; padding: 19px 20px; border-right: 1px solid #0597d8; }
+.home-ico:hover { background: #0597d8; }
 
 
 
